@@ -2,7 +2,7 @@ import '../styles/abstracts/App.scss';
 import Cards from '../Cards.js';
 import Footer from './Footer.js';
 import {RiAddCircleFill} from 'react-icons/ri';
-
+import "../styles/abstracts/App.scss";
 
 function Home() {
   return (
@@ -48,9 +48,6 @@ function Home() {
     </div>
   </div>
 </nav>
-
-
-
 <div>  
 <h1>Ofertas para ti</h1>
 <p>Ver más</p> <button><RiAddCircleFill/></button>
