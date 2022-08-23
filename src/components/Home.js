@@ -1,4 +1,7 @@
 import '../styles/abstracts/App.scss';
+import Cards from '../Cards.js';
+import Footer from './Footer.js';
+import {RiAddCircleFill} from 'react-icons/ri';
 
 
 function Home() {
@@ -48,21 +51,18 @@ function Home() {
 
 
 
-      <header className="App-header">
-        
-        <p>
-          
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<div>  
+<h1>Ofertas para ti</h1>
+<p>Ver más</p> <button><RiAddCircleFill/></button>
+</div>
+<div>
+  <p>Una tarjeta pensanto en ti</p>
+  <p>Inlcuye recompensas, ¡corre!</p>
+</div>
+<Cards/>
+  <Footer/>  
     </div>
+    
   );
 }
 
