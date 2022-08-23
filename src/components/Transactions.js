@@ -16,10 +16,7 @@ const Transactions = () => {
 
   return (
     <section className="containerTransactions">
-      {/* <div className="title"> */}
-        {/* <h1>1. Selecciona tu movimiento</h1> */}
         <p className="h1 d-flex justify-content-center title">Selecciona tu movimiento</p>
-      {/* </div> */}
       <section className="allTransactions">
         {transaction.map((item) => {
           return (
