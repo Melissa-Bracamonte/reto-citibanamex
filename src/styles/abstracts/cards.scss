@@ -1,0 +1,19 @@
+//Tarjeta
+.container-cards{
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    font-family: sans-serif;
+  }
+  
+  .text-card-debito{
+    align-self: flex-end;
+  }
+  
+  .card-img{
+    width: 100px;
+  }
+  
+  .gray{
+    color: gray;
+  }
