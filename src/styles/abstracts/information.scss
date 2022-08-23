@@ -1,0 +1,51 @@
+//variable
+$primary-color: #056dae;
+$primary-letter: white;
+
+body{
+  background-color: $primary-color;
+}
+
+h1{
+ color: $primary-letter;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color:rgba(255, 255, 255, 0.6);
+  width: 80%;
+ margin-top: 10%;
+ margin-bottom: 10%;
+}
+
+.headerContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+
+h1{
+  margin: 5% 10% 10% 5%;
+  color: black;
+  text-align: center;
+}
+
+.logociti{
+  margin: 0% 10% 10% 5%
+}
+
+.pContainer{
+display: flex;
+flex-direction: column;
+align-content: center;
+}
+
+p{
+  margin: 0% 10% 2% 10%;
+  text-align: justify;
+}
