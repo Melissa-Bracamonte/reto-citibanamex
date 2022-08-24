@@ -4,6 +4,8 @@ import "../styles/abstracts/sharingwith.scss";
 import cardDebito from "../img/cardBank.png";
 import { FaDollarSign } from 'react-icons/fa';
 import { BsFillPeopleFill } from 'react-icons/bs';
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
@@ -14,6 +16,7 @@ const SharingWith = () => {
     // response: [],
   });
   const [objPopup, setPopup] = useState({ visibility: false });
+  const navigate = useNavigate();
 
   const getAllClients = () => {
     fetch("https://6305077894b8c58fd72a83cd.mockapi.io/people")
@@ -70,9 +73,14 @@ const SharingWith = () => {
     let popupProduct = {};
     setPopup({ visibility: true, popupProduct });
   };
+
   const onClickHide = () => {
     getAllClients();
     setPopup({ visibility: false });
+  };
+
+  const redirectBack = () => {
+    navigate("/movimientos");
   };
 
   return (
@@ -82,6 +90,7 @@ const SharingWith = () => {
         visible={objPopup.visibility}
         attrProduct={objPopup.popupProduct}
       />
+<AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
       <section className="containerClients">
         <p className="h1 d-flex justify-content-center tittle-sharing">
           2. Compartir con:
@@ -132,7 +141,7 @@ const SharingWith = () => {
         </section>
 
         <div className='container-btn'>
-          <button className='btn-newperson'><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
+          <button className='btn-newperson' onClick={onAdd}><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
           <button className='btn-dg'> <BsFillPeopleFill /> <p className="txt-btn">Dividir Gastos</p></button>
         </div>
 
