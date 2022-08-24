@@ -40,14 +40,11 @@ const SharingWith = () => {
       });
     }
   };
-  // const handleChange = () => {
-  //   setChecked(!checked);
-  // };
 
-  // const hadleAddCard = (card) => {
-  //   setData({...data, cards:[...data.cards, card]})
-  // }
-
+  const totalCheckList = () =>{
+    const totalClients = data.cards.length;
+    console.log(totalClients)
+  }
 
   const onAdd = () => {
     let popupProduct = {};
@@ -96,14 +93,6 @@ const SharingWith = () => {
                           type="checkbox"
                           id={item.id}
                           onChange={handleChange}
-                        //  checked={checked}
-                        // onChange={(e)=>{
-                        //   e.preventDefault()
-                        //   handleChange()
-                        //   hadleAddCard(item)}}
-                        //de aqui hacia abajo otro intento fallido
-                        //               value={checked}
-                        // onChange={handleChange}
                         />
                       </div>
                     </section>
@@ -116,7 +105,7 @@ const SharingWith = () => {
 
         <div className='container-btn'>
           <button className='btn-newperson' onClick={onAdd}><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
-          <button className='btn-dg'> <BsFillPeopleFill /> <p className="txt-btn">Dividir Gastos</p></button>
+          <button className='btn-dg' onClick={totalCheckList}> <BsFillPeopleFill /> <p className="txt-btn">Dividir Gastos</p></button>
         </div>
 
         <div className="list-result">
