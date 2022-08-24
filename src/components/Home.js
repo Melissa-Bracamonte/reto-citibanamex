@@ -9,7 +9,7 @@ function Home() {
     <div className="App">
       <nav className="navbar fixed-top">
   <div className="container-fluid">
-    <a className="navbar-brand" href="#">¡Hola Melissa!</a>
+    {/* <a className="navbar-brand" href="#">¡Hola Melissa!</a> */}
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span className="navbar-toggler-icon"></span>
     </button>
