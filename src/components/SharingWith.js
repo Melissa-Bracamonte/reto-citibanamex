@@ -11,6 +11,8 @@ import { BiQuestionMark } from 'react-icons/bi';
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
+  const [totalDivision, setTotalDivision]= useState();
+  
   const [data, setData] = useState({
     cards: [],
   });
@@ -58,17 +60,20 @@ const SharingWith = () => {
       });
     }
   };
-
-  let total;
-  const totalCheckList = () => {
-    // const total = data.cards.length;
-    total = data.cards.length;
-    console.log(total);
-  };
-
-  const SplitExpenses = () => {
-
-  };
+  const divisionCuenta=(total)=>{
+    let division = 0;
+   
+    division = 800 / total +1;
+    
+    setTotalDivision(division);
+    return division;
+    
+  }
+  const totalCheckList=()=>{
+    const total = data.cards.length;
+    console.log(total)
+    console.log(divisionCuenta(total));
+  } 
 
   const onAdd = () => {
     let popupProduct = {};
