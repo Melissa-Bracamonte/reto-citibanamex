@@ -9,16 +9,13 @@ import { MdQrCode } from 'react-icons/md';
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiQuestionMark } from 'react-icons/bi';
 
-
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
-  const [checked, setChecked] = useState(false);
-  // const [checked, setChecked] = useState(false);
   const [data, setData] = useState({
     cards: [],
-    // response: [],
   });
   const [objPopup, setPopup] = useState({ visibility: false });
+  const navigate = useNavigate();
 
   const getAllClients = () => {
     fetch("https://6305077894b8c58fd72a83cd.mockapi.io/people")
@@ -32,49 +29,35 @@ const SharingWith = () => {
   useEffect(() => {
     getAllClients();
   }, []);
+  
   const handleChange = (e) => {
-    // Destructuring
-    const { value, checked } = e.target;
+    const checked = e.target.checked;
+    const value = e.target.id;
+   
     const { cards } = data;
 
-    console.log(`${value} is ${checked}`);
-
-    // Case 1 : The user checks the box
     if (checked) {
-      setChecked(!checked);
       setData({
-        cards: [...cards, value],
-        // response: [...cards, value]
+        cards: [...cards, value ]
       });
     } else {
       setData({
-        cards: cards.id.filter((e) => e !== value),
-        // response: cards.filter((e) => e !== value)
+        cards: cards.filter((e) => e !== value)
       });
     }
   };
-  // const handleChange = () => {
-  //   setChecked(!checked);
-  // };
+  const totalCheckList=()=>{
+    const total = data.cards.length;
+    console.log(total)
+  } 
 
-  // const hadleAddCard = (card) => {
-  //   setData({...data, cards:[...data.cards, card]})
-  // }
 
-  // const handleChange = event => {
-  //   if (event.target.checked) {
-
-  //     setChecked(!checked);
-  //     setData({...data, cards:[...data.cards]})
-  //   } else {
-  //     // console.log('⛔️ Checkbox is NOT checked');
-  //   }
-  // };
 
   const onAdd = () => {
     let popupProduct = {};
     setPopup({ visibility: true, popupProduct });
   };
+
   const onClickHide = () => {
     getAllClients();
     setPopup({ visibility: false });
@@ -97,7 +80,6 @@ const SharingWith = () => {
       />
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
       <BiQuestionMark className="question" onClick={redirectInformation} />
-
       <section className="containerClients">
         <p className="h1 d-flex justify-content-center tittle-sharing">
           2. Compartir con:
@@ -129,16 +111,9 @@ const SharingWith = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          id="reverseCheck1"
+                          id={item.id}
                           onChange={handleChange}
-                        //  checked={checked}
-                        // onChange={(e)=>{
-                        //   e.preventDefault()
-                        //   handleChange()
-                        //   hadleAddCard(item)}}
-                        //de aqui hacia abajo otro intento fallido
-                        //               value={checked}
-                        // onChange={handleChange}
+                      
                         />
                       </div>
                     </section>
@@ -150,8 +125,8 @@ const SharingWith = () => {
         </section>
 
         <div className='container-btn'>
-          <button className='btn-newperson'><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
-          <button className='btn-dg'> <BsFillPeopleFill /> <p className="txt-btn">Dividir Gastos</p></button>
+          <button className='btn-newperson' onClick={onAdd}><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
+          <button className='btn-dg'> <BsFillPeopleFill /> <p className="txt-btn" onClick={totalCheckList}>Dividir Gastos</p></button>
         </div>
 
         <div className="card result">
