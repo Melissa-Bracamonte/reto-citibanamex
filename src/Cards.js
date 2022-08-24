@@ -14,7 +14,7 @@ function Cards() {
                 <p5 className='gray'>Mi cuenta **789</p5><br/>
                 <p5>$9,025.00</p5>
                 </div>
-                <Link to="/Informacion">
+                <Link to="/movimientos">
                     <div><FaAngleRight/></div>
                 </Link>
                 

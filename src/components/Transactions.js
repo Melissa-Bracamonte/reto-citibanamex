@@ -30,7 +30,7 @@ const Transactions = () => {
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
       <section className="containerTransactions">
         <p className="h2 d-flex justify-content-center title">
-          Selecciona tu movimiento
+          1.Selecciona tu movimiento
         </p>
         <section className="allTransactions">
           {transaction.map((item) => {
@@ -45,7 +45,7 @@ const Transactions = () => {
                       </h6>
                     </section>
                     <section className="p-2 d-flex flex-column">
-                      <p className="card-text">$ {item.amountToPay}</p>
+                      <p className="card-text">${item.amountToPay}</p>
                       <button
                         type="button"
                         className="btnShare"
