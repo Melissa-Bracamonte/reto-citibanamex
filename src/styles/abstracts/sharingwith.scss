@@ -23,23 +23,34 @@ body {
 }
 
 .baseSimple {
-  margin: 10px;
+  margin: 5px;
+
+}
+
+.card-inf {
+  width: 300px;
+}
+
+.card-data {
+  display: inline-table;
 }
 
 .card-imgDebito {
   width: 45px;
   height: 30px;
-
+  margin-right: 5px;
+  margin-top: 5px;
 }
 
 .double {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
+
 }
 
 .double-upper {
   text-transform: uppercase;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .container-btn {
@@ -100,16 +111,16 @@ body {
   background: linear-gradient(#1260a5);
 }
 
-.list-result {
-  background-color: #ffffff;
+.result {
   width: 370px;
   border-radius: 6px;
   margin-top: 30px;
-  padding: 10px;
+
 }
 
 .txt-res {
   font-size: 20px;
+  width: 75px;
 }
 
 .container-return {
@@ -126,4 +137,11 @@ body {
   color: #ffffff;
   border: none;
   border-radius: 6px;
+}
+
+.question {
+  color: #ffffff;
+  width: 30px;
+  height: 28px;
+  margin: 20px 0 0 300px;
 }
