@@ -33,15 +33,15 @@ const Transactions = () => {
   };
 
   const redirectAccounts = (id, expenseName, date, amountToPay) => {
-    navigate("/compartir");
-    console.log(id);
+    navigate("/compartir", { state: { id: id, expenseName: expenseName, date:date, amountTopay:amountToPay } });
+    // console.log(id);
     // setId(id);
-    saveAmountToPay({
-      expenseName: expenseName,
-      date: date,
-      amountToPay: amountToPay,
-      id: id
-    });
+    // saveAmountToPay({
+    //   expenseName: expenseName,
+    //   date: date,
+    //   amountToPay: amountToPay,
+    //   id: id
+    // });
   };
 
   const redirectBack = () => {

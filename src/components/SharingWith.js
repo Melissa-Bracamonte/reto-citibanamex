@@ -6,13 +6,15 @@ import { FaDollarSign } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from "react-icons/bi";
+import { BiQuestionMark } from 'react-icons/bi';
+import { useLocation } from "react-router";
 import "../styles/abstracts/sharingwith.scss";
 import SplitAccount from "./SplitAccount";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
   const [totalDivision, setTotalDivision] = useState();
+    const { state } = useLocation();
   const [data, setData] = useState({
     cards: [],
   });
@@ -34,11 +36,17 @@ const SharingWith = () => {
   }, []);
 
   const totalToSplit = () => {
-    fetch("https://6305077894b8c58fd72a83cd.mockapi.io/expenses")
-      .then((response) => response.json())
-      .then((expenses) => setTotalAmount(expenses));
+
+    const selectInfo= state.amountTopay;
+    console.log(selectInfo)
+    
+
+   
+    console.log("total!!!")
+    console.log(state);
+
   };
-  console.log(totalAmount);
+ 
 
   useEffect(() => {
     totalToSplit();
@@ -60,20 +68,15 @@ const SharingWith = () => {
       });
     }
   };
-  const divisionCuenta = (total) => {
+  const divisionCuenta=(total,totalToSplit)=>{
     let division = 0;
-
-    division = 800 / total + 1;
-
+   
+    division = totalToSplit / (total +1);
     setTotalDivision(division);
     return division;
   };
   const totalCheckList = () => {
     const total = data.cards.length;
-    console.log(total);
-    console.log(divisionCuenta(total));
-  };
-
   const onAdd = () => {
     let popupProduct = {};
     setPopup({ visibility: true, popupProduct });
@@ -83,7 +86,6 @@ const SharingWith = () => {
     getAllClients();
     setPopup({ visibility: false });
   };
-
   const redirectBack = () => {
     navigate("/movimientos");
   };
