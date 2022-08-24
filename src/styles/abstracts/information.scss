@@ -16,7 +16,7 @@ h1{
   justify-content: center;
   background-color:rgba(255, 255, 255, 0.6);
   width: 80%;
- margin-top: 10%;
+  height: 710px;
  margin-bottom: 10%;
 }
 
@@ -25,14 +25,17 @@ h1{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
 }
-
 
 h1{
   margin: 5% 10% 10% 5%;
   color: black;
   text-align: center;
+}
+
+.narrow1{
+  width: 45%;
+  margin: 2% 0% 2% 50% ;
 }
 
 .logociti{
