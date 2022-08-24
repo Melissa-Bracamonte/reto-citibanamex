@@ -6,6 +6,7 @@ $primary-letter: white;
 .containerClients {
   margin: 15px auto;
   width: 370px;
+ 
 
 }
 
@@ -26,14 +27,22 @@ $primary-letter: white;
   margin: 10px 0;
 }
 
+.card-imgDebito {
+  width: 50px;
+  height: 45px;
+  justify-content:space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
 .double {
-  font-size: 13px;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .double-upper {
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .container-btn {
@@ -63,3 +72,14 @@ $primary-letter: white;
   border-radius: 6px;
 
 }
+::-webkit-scrollbar { 
+  width: 1em; 
+} 
+::-webkit-scrollbar-track { 
+  background: #B6B6BA; border-radius: 100vw; margin-block: 0.5em; 
+} 
+::-webkit-scrollbar-thumb{
+   background: #76b2e8; 
+      border: 0.1em solid#1260a5; border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(#1260a5); }
