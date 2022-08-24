@@ -4,11 +4,15 @@ import cardDebito from '../img/cardBank.png';
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
+  const [checked, setChecked] = useState({});
+  const [data, setData] =useState({
+    cards:[]
+  })
 
   const getAllClients = () => {
     fetch("https://6305077894b8c58fd72a83cd.mockapi.io/people")
       .then((response) => response.json())
-      .then((clients) => setClients(clients));
+      .then((clients) =>setClients(clients));
   };
   const maskifyCardsContact=(input)=> {
     return input.replace(/.(?=.{3})/g, "*");
@@ -17,6 +21,15 @@ const SharingWith = () => {
   useEffect(() => {
     getAllClients();
   }, []);
+
+ 
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
+  const hadleAddCard = (card) => {
+    setData({...data, cards:[...data.cards, card]})
+  }
 
   return (
     <section className="containerClients">
@@ -33,8 +46,12 @@ const SharingWith = () => {
                     <h6 className="card-subtitle mb-2 text-muted double-upper">{item.bank} <span /> {item.name} </h6>
                   </section>
                   <section className="p-2">
-                    <div class="form-check form-check-reverse check">
-                      <input class="form-check-input" type="checkbox" value="" id="reverseCheck1" />
+                    <div className="form-check form-check-reverse check">
+                      <input className="form-check-input" type="checkbox" id="reverseCheck1"  checked={checked}
+                      onChange={(e)=>{
+                        e.preventDefault()
+                        handleChange()
+                        hadleAddCard(item)}} />
                     </div>
                   </section>
                 </div>
