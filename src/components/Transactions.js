@@ -18,7 +18,7 @@ const Transactions = () => {
   }, []);
 
   const redirectAccounts = () => {
-    navigate("/informacion");
+    navigate("/compartir");
   };
 
   const redirectBack = () => {
