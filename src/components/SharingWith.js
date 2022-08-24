@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import '../styles/abstracts/sharingwith.scss'
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
-  const [checked, setChecked] = useState({});
+  const [checked, setChecked] = useState(false);
+  // const [checked, setChecked] = useState(false);
   const [data, setData] =useState({
-    cards:[]
+    cards:[],
+    // response: [],
   })
 
   const getAllClients = () => {
@@ -17,14 +19,46 @@ const SharingWith = () => {
     getAllClients();
   }, []);
 
- 
-  const handleChange = () => {
-    setChecked(!checked);
-  };
-
-  const hadleAddCard = (card) => {
-    setData({...data, cards:[...data.cards, card]})
+  const handleChange = (e) => {
+    // Destructuring
+    const { value, checked } = e.target;
+    const { cards } = data;
+      
+    console.log(`${value} is ${checked}`);
+     
+    // Case 1 : The user checks the box
+    if (checked) {
+      setChecked(!checked);
+      setData({
+        cards: [...cards, value],
+        // response: [...cards, value]
+      
+      });
+    }else {
+      setData({
+        cards: cards.id.filter((e) => e !== value),
+        // response: cards.filter((e) => e !== value)
+       
+      });
+    }
   }
+  // const handleChange = () => {
+  //   setChecked(!checked);
+  // };
+
+  // const hadleAddCard = (card) => {
+  //   setData({...data, cards:[...data.cards, card]})
+  // }
+
+  // const handleChange = event => {
+  //   if (event.target.checked) {
+
+  //     setChecked(!checked);
+  //     setData({...data, cards:[...data.cards]})
+  //   } else {
+  //     // console.log('⛔️ Checkbox is NOT checked');
+  //   }
+  // };
 
   return (
     <section className="containerClients">
@@ -41,11 +75,17 @@ const SharingWith = () => {
                   </section>
                   <section className="p-2">
                     <div className="form-check form-check-reverse check">
-                      <input className="form-check-input" type="checkbox" id="reverseCheck1"  checked={checked}
-                      onChange={(e)=>{
-                        e.preventDefault()
-                        handleChange()
-                        hadleAddCard(item)}} />
+                      <input className="form-check-input" type="checkbox" id="reverseCheck1" 
+                       onChange={handleChange}
+                      //  checked={checked}
+                      // onChange={(e)=>{
+                      //   e.preventDefault()
+                      //   handleChange()
+                      //   hadleAddCard(item)}}
+                      //de aqui hacia abajo otro intento fallido
+          //               value={checked}
+          // onChange={handleChange} 
+          />
                     </div>
                   </section>
                 </div>
@@ -62,6 +102,6 @@ const SharingWith = () => {
     </section>
 
   );
-};
+}
 
 export default SharingWith;
