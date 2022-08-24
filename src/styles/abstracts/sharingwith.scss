@@ -1,12 +1,11 @@
-//variable
-$primary-color: #056dae;
-$secondary-color: #00BBEE;
-$primary-letter: white;
+body {
+  background-color: #056dae;
+}
 
 .containerClients {
   margin: 15px auto;
   width: 370px;
- 
+  padding: 0px;
 
 }
 
@@ -18,21 +17,19 @@ $primary-letter: white;
 }
 
 .tittle-sharing {
-  color: $primary-letter;
+  color: #ffffff;
   font-size: 25px;
-  margin: 0;
-}
-
-.baseSimple {
   margin: 10px 0;
 }
 
+.baseSimple {
+  margin: 10px;
+}
+
 .card-imgDebito {
-  width: 50px;
-  height: 45px;
-  justify-content:space-around;
-  flex-direction: row;
-  align-items: center;
+  width: 45px;
+  height: 30px;
+
 }
 
 .double {
@@ -57,29 +54,76 @@ $primary-letter: white;
   height: 48px;
   background-color: #B6B6BA;
   text-align: center;
-  color: $primary-letter;
+  color: #fff;
   border: none;
   border-radius: 6px;
+}
+
+.icon-dollar {
+  width: 10px;
+}
+
+.txt-btn {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
 }
 
 .btn-dg {
   width: 150px;
   height: 48px;
-  background-color: $secondary-color;
+  background-color: #00BBEE;
   text-align: center;
-  color: $primary-letter;
+  color: #ffffff;
   border: none;
   border-radius: 6px;
 
 }
-::-webkit-scrollbar { 
-  width: 1em; 
-} 
-::-webkit-scrollbar-track { 
-  background: #B6B6BA; border-radius: 100vw; margin-block: 0.5em; 
-} 
-::-webkit-scrollbar-thumb{
-   background: #76b2e8; 
-      border: 0.1em solid#1260a5; border-radius: 100vw;
+
+::-webkit-scrollbar {
+  width: 1em;
 }
-::-webkit-scrollbar-thumb:hover { background: linear-gradient(#1260a5); }
+
+::-webkit-scrollbar-track {
+  background: #B6B6BA;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #76b2e8;
+  border: 0.1em solid#1260a5;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#1260a5);
+}
+
+.list-result {
+  background-color: #ffffff;
+  width: 370px;
+  border-radius: 6px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.txt-res {
+  font-size: 20px;
+}
+
+.container-return {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.return {
+  width: 150px;
+  height: 48px;
+  background-color: #00BBEE;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+}
