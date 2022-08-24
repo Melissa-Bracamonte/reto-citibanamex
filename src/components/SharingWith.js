@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import '../styles/abstracts/sharingwith.scss'
+import '../styles/abstracts/sharingwith.scss';
+import cardDebito from '../img/cardBank.png';
+
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
 
@@ -8,6 +10,9 @@ const SharingWith = () => {
       .then((response) => response.json())
       .then((clients) => setClients(clients));
   };
+  const maskifyCardsContact=(input)=> {
+    return input.replace(/.(?=.{3})/g, "*");
+  }
 
   useEffect(() => {
     getAllClients();
@@ -21,9 +26,10 @@ const SharingWith = () => {
           return (
             <div key={item.id}>
               <div className="card baseSimple">
+                <img className="card-imgDebito" src={cardDebito} alt="img tarjeta"/>
                 <div className="card-body d-flex flex-row justify-content-between  ">
                   <section className="mr-auto p-2">
-                    <h5 className="card-title double">{item.name} <span /> {item.cardNumber} </h5>
+                    <h5 className="card-title double">{item.name} <span /> {maskifyCardsContact(item.cardNumber)} </h5>
                     <h6 className="card-subtitle mb-2 text-muted double-upper">{item.bank} <span /> {item.name} </h6>
                   </section>
                   <section className="p-2">
