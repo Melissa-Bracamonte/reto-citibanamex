@@ -1,20 +1,36 @@
 import React, { useState, useEffect } from "react";
-import "../styles/abstracts/sharingwith.scss";
 import { ModalAddAccount } from "./ModalAddAccount";
+import '../styles/abstracts/sharingwith.scss';
+import cardDebito from '../img/cardBank.png';
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
+  const [checked, setChecked] = useState({});
+  const [data, setData] =useState({
+    cards:[]
+  })
   const [objPopup, setPopup] = useState({ visibility: false });
 
   const getAllClients = () => {
     fetch("https://6305077894b8c58fd72a83cd.mockapi.io/people")
       .then((response) => response.json())
-      .then((clients) => setClients(clients));
+      .then((clients) =>setClients(clients));
   };
+  const maskifyCardsContact=(input)=> {
+    return input.replace(/.(?=.{3})/g, "*");
+  }
 
   useEffect(() => {
     getAllClients();
   }, []);
+  
+    const handleChange = () => {
+    setChecked(!checked);
+  };
+
+  const hadleAddCard = (card) => {
+    setData({...data, cards:[...data.cards, card]})
+  }
 
   const onAdd = () => {
     let popupProduct = {};
@@ -32,36 +48,28 @@ const SharingWith = () => {
         visible={objPopup.visibility}
         attrProduct={objPopup.popupProduct}
       />
-
-      <section className="containerClients">
-        <p className="h1 d-flex justify-content-center tittle-sharing">
-          2. Compartir con:
-        </p>
-        <section className="list-clients">
-          {clients.map((item) => {
-            return (
-              <div key={item.id}>
-                <div className="card baseSimple">
-                  <div className="card-body d-flex flex-row justify-content-between  ">
-                    <section className="mr-auto p-2">
-                      <h5 className="card-title double">
-                        {item.name} <span /> {item.cardNumber}{" "}
-                      </h5>
-                      <h6 className="card-subtitle mb-2 text-muted double-upper">
-                        {item.bank} <span /> {item.name}{" "}
-                      </h6>
-                    </section>
-                    <section className="p-2">
-                      <div class="form-check form-check-reverse check">
-                        <input
-                          class="form-check-input"
-                          type="checkbox"
-                          value=""
-                          id="reverseCheck1"
-                        />
-                      </div>
-                    </section>
-                  </div>
+    <section className="containerClients">
+      <p className="h1 d-flex justify-content-center tittle-sharing">2. Compartir con:</p>
+      <section className="list-clients">
+        {clients.map((item) => {
+          return (
+            <div key={item.id}>
+              <div className="card baseSimple">
+                <img className="card-imgDebito" src={cardDebito} alt="img tarjeta"/>
+                <div className="card-body d-flex flex-row justify-content-between  ">
+                  <section className="mr-auto p-2">
+                    <h5 className="card-title double">{item.name} <span /> {maskifyCardsContact(item.cardNumber)} </h5>
+                    <h6 className="card-subtitle mb-2 text-muted double-upper">{item.bank} <span /> {item.name} </h6>
+                  </section>
+                  <section className="p-2">
+                    <div className="form-check form-check-reverse check">
+                      <input className="form-check-input" type="checkbox" id="reverseCheck1"  checked={checked}
+                      onChange={(e)=>{
+                        e.preventDefault()
+                        handleChange()
+                        hadleAddCard(item)}} />
+                    </div>
+                  </section>
                 </div>
               </div>
             );
