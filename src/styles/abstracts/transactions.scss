@@ -1,22 +1,26 @@
 //variable
 $primary-color: #056dae;
 $primary-letter: white;
+$secondary-color: #f8f8f8;
+$button-color: #00bbee;
 
-// .title{
-//   display: flex;
-//   justify-content: center;
-//   margin-top: 50px;
-//   width: 50%;
-//   align-content: center;
-//   h1{
-//     color: $primary-letter;
-//    }
-// }
-
-.title{
-    margin-top: 50px;
+.arrowBack {
+  width: 27px;
+  height: 25px;
+  margin: 20px 0 0 20px;
+  color: $secondary-color;
 }
 
-.allTransactions{
-    padding-top: 40px;
+.title {
+  margin-top: 15px;
+  color: $primary-letter;
+}
+
+.allTransactions {
+  padding-top: 40px;
+  .btnShare {
+    background-color: $button-color;
+    border: none;
+    color: $primary-letter;
+  }
 }

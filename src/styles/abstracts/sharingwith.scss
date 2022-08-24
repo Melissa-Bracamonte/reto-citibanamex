@@ -1,0 +1,85 @@
+//variable
+$primary-color: #056dae;
+$secondary-color: #00BBEE;
+$primary-letter: white;
+
+.containerClients {
+  margin: 15px auto;
+  width: 370px;
+ 
+
+}
+
+.list-clients {
+  width: 370px;
+  height: 300px;
+  overflow-y: scroll;
+
+}
+
+.tittle-sharing {
+  color: $primary-letter;
+  font-size: 25px;
+  margin: 0;
+}
+
+.baseSimple {
+  margin: 10px 0;
+}
+
+.card-imgDebito {
+  width: 50px;
+  height: 45px;
+  justify-content:space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.double {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.double-upper {
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.container-btn {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.btn-newperson {
+  width: 150px;
+  height: 48px;
+  background-color: #B6B6BA;
+  text-align: center;
+  color: $primary-letter;
+  border: none;
+  border-radius: 6px;
+}
+
+.btn-dg {
+  width: 150px;
+  height: 48px;
+  background-color: $secondary-color;
+  text-align: center;
+  color: $primary-letter;
+  border: none;
+  border-radius: 6px;
+
+}
+::-webkit-scrollbar { 
+  width: 1em; 
+} 
+::-webkit-scrollbar-track { 
+  background: #B6B6BA; border-radius: 100vw; margin-block: 0.5em; 
+} 
+::-webkit-scrollbar-thumb{
+   background: #76b2e8; 
+      border: 0.1em solid#1260a5; border-radius: 100vw;
+}
+::-webkit-scrollbar-thumb:hover { background: linear-gradient(#1260a5); }

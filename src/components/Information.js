@@ -1,15 +1,21 @@
 import React from "react";
 import "../styles/abstracts/information.scss";
 import logociti from "../../src/img/logociti.png";
+import flecha1 from "../../src/img/flecha1.png";
+import { useNavigate } from "react-router-dom";
 
 const Information = () => {
+
+  const navigate = useNavigate();
+
   return (
     <>
+      <div className="narrow1">
+          <img className="narrow1" src={flecha1} alt="narrow1" onClick={() => navigate('/movimientos')} />
+      </div>
       <div className="container">
         <div className="headerContainer">
-          <header>
-            <img className="logociti" src={logociti} alt="logociti" />
-          </header>
+          <img className="logociti" src={logociti} alt="logociti" />
         </div>
         <h1>¡ Comparte tus gastos con quien quieras y bájale al estrés !</h1>
         <div className="pContainer">
