@@ -9,11 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
-  const [checked, setChecked] = useState(false);
-  // const [checked, setChecked] = useState(false);
   const [data, setData] = useState({
     cards: [],
-    // response: [],
   });
   const [objPopup, setPopup] = useState({ visibility: false });
   const navigate = useNavigate();
@@ -30,24 +27,19 @@ const SharingWith = () => {
   useEffect(() => {
     getAllClients();
   }, []);
+  
   const handleChange = (e) => {
-    // Destructuring
-    const { value, checked } = e.target;
+    const checked = e.target.checked;
+    const value = e.target.id;
     const { cards } = data;
 
-    console.log(`${value} is ${checked}`);
-
-    // Case 1 : The user checks the box
     if (checked) {
-      setChecked(!checked);
       setData({
-        cards: [...cards, value],
-        // response: [...cards, value]
+        cards: [...cards, value ]
       });
     } else {
       setData({
-        cards: cards.id.filter((e) => e !== value),
-        // response: cards.filter((e) => e !== value)
+        cards: cards.filter((e) => e !== value)
       });
     }
   };
@@ -59,15 +51,6 @@ const SharingWith = () => {
   //   setData({...data, cards:[...data.cards, card]})
   // }
 
-  // const handleChange = event => {
-  //   if (event.target.checked) {
-
-  //     setChecked(!checked);
-  //     setData({...data, cards:[...data.cards]})
-  //   } else {
-  //     // console.log('⛔️ Checkbox is NOT checked');
-  //   }
-  // };
 
   const onAdd = () => {
     let popupProduct = {};
@@ -120,7 +103,7 @@ const SharingWith = () => {
                         <input
                           className="form-check-input"
                           type="checkbox"
-                          id="reverseCheck1"
+                          id={item.id}
                           onChange={handleChange}
                         //  checked={checked}
                         // onChange={(e)=>{
