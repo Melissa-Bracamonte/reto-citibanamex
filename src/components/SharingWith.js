@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ModalAddAccount } from "./ModalAddAccount";
 import "../styles/abstracts/sharingwith.scss";
 import cardDebito from "../img/cardBank.png";
+import { FaDollarSign } from 'react-icons/fa';
+import { BsFillPeopleFill } from 'react-icons/bs';
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
@@ -111,14 +113,14 @@ const SharingWith = () => {
                           type="checkbox"
                           id="reverseCheck1"
                           onChange={handleChange}
-                          //  checked={checked}
-                          // onChange={(e)=>{
-                          //   e.preventDefault()
-                          //   handleChange()
-                          //   hadleAddCard(item)}}
-                          //de aqui hacia abajo otro intento fallido
-                          //               value={checked}
-                          // onChange={handleChange}
+                        //  checked={checked}
+                        // onChange={(e)=>{
+                        //   e.preventDefault()
+                        //   handleChange()
+                        //   hadleAddCard(item)}}
+                        //de aqui hacia abajo otro intento fallido
+                        //               value={checked}
+                        // onChange={handleChange}
                         />
                       </div>
                     </section>
@@ -129,12 +131,21 @@ const SharingWith = () => {
           })}
         </section>
 
-        <div className="container-btn">
-          <button className="btn-newperson" onClick={onAdd}>
-            $ Nueva Persona
-          </button>
-          <button className="btn-dg">Dividir Gastos</button>
+        <div className='container-btn'>
+          <button className='btn-newperson'><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
+          <button className='btn-dg'> <BsFillPeopleFill /> <p className="txt-btn">Dividir Gastos</p></button>
         </div>
+
+        <div className="list-result">
+          <h5 className="txt-res">Melissa Bracamonte <span> $400.00</span></h5>
+          <h5 className="txt-res">Daniela Miñon <span> $400.00</span></h5>
+          <h5 className="txt-res">Melissa Bracamonte <span> $400.00</span></h5>
+        </div>
+
+        <div className="container-return">
+          <button className="return">Volver al inicio</button>
+        </div>
+
       </section>
     </>
   );
