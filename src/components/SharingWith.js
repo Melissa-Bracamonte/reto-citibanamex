@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ModalAddAccount } from "./ModalAddAccount";
-import "../styles/abstracts/sharingwith.scss";
 import cardDebito from "../img/cardBank.png";
 import { FaDollarSign } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
-import { MdQrCode } from 'react-icons/md';
+import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from 'react-icons/bi';
+import { BiQuestionMark } from "react-icons/bi";
+import "../styles/abstracts/sharingwith.scss";
+import SplitAccount from "./SplitAccount";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
-  const [totalDivision, setTotalDivision]= useState();
-  
+  const [totalDivision, setTotalDivision] = useState();
   const [data, setData] = useState({
     cards: [],
   });
@@ -47,12 +47,12 @@ const SharingWith = () => {
   const handleChange = (e) => {
     const checked = e.target.checked;
     const value = e.target.id;
-
+    const name = e.target.name
     const { cards } = data;
 
     if (checked) {
       setData({
-        cards: [...cards, value],
+        cards: [...cards, value, name],
       });
     } else {
       setData({
@@ -60,20 +60,19 @@ const SharingWith = () => {
       });
     }
   };
-  const divisionCuenta=(total)=>{
+  const divisionCuenta = (total) => {
     let division = 0;
-   
-    division = 800 / total +1;
-    
+
+    division = 800 / total + 1;
+
     setTotalDivision(division);
     return division;
-    
-  }
-  const totalCheckList=()=>{
+  };
+  const totalCheckList = () => {
     const total = data.cards.length;
-    console.log(total)
+    console.log(total);
     console.log(divisionCuenta(total));
-  } 
+  };
 
   const onAdd = () => {
     let popupProduct = {};
@@ -85,7 +84,6 @@ const SharingWith = () => {
     setPopup({ visibility: false });
   };
 
-  const navigate = useNavigate();
   const redirectBack = () => {
     navigate("/movimientos");
   };
@@ -104,7 +102,7 @@ const SharingWith = () => {
       <BiQuestionMark className="question" onClick={redirectInformation} />
       <section className="containerClients">
         <p className="h1 d-flex justify-content-center tittle-sharing">
-          2. Compartir con:
+          2. Dividir con:
         </p>
         <section className="list-clients">
           {clients.map((item) => {
@@ -120,7 +118,7 @@ const SharingWith = () => {
                       />
                       <div className="card-data">
                         <h5 className="card-title  double">
-                          {item.name} <br /> {" "}
+                          {item.name} <br />{" "}
                           {maskifyCardsContact(item.cardNumber)}{" "}
                         </h5>
                         <h6 className="card-subtitle mb-1 text-muted double-upper">
@@ -134,6 +132,7 @@ const SharingWith = () => {
                           className="form-check-input"
                           type="checkbox"
                           id={item.id}
+                          name={item.name}
                           onChange={handleChange}
                         />
                       </div>
@@ -158,13 +157,12 @@ const SharingWith = () => {
             </p>
           </button>
         </div>
-        <div className="card result">
+        <SplitAccount data={data}/>
+        {/* <div className="card result">
           <div className="card-body d-flex flex-row justify-content-between p-1">
             <section className="mr-auto p-1">
               <h5 className="card-title">Daniela Miñon</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                25/07
-              </h6>
+              <h6 className="card-subtitle mb-2 text-muted">25/07</h6>
             </section>
             <section className="p-1 d-flex flex-column ">
               <p className="card-text txt-res">$400.00</p>
@@ -173,9 +171,7 @@ const SharingWith = () => {
           <div className="card-body d-flex flex-row justify-content-between p-1">
             <section className="mr-auto p-1">
               <h5 className="card-title">Melissa Bracamonte</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                25/07
-              </h6>
+              <h6 className="card-subtitle mb-2 text-muted">25/07</h6>
             </section>
             <section className="p-1 d-flex flex-column ">
               <p className="card-text txt-res">$400.00</p>
@@ -184,16 +180,18 @@ const SharingWith = () => {
           <div className="card-body d-flex flex-row justify-content-between p-1">
             <section className="mr-auto p-1">
               <h5 className="card-title">Total</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-              </h6>
+              <h6 className="card-subtitle mb-2 text-muted"></h6>
             </section>
             <section className="p-1 d-flex flex-column ">
               <p className="card-text txt-res">$800.00</p>
             </section>
           </div>
-        </div>
+        </div> */}
         <div className="container-return">
-          <button className="return"> <MdQrCode /> <p className="txt-btn">Generar CoDi</p></button>
+          <button className="return">
+            {" "}
+            <MdQrCode /> <p className="txt-btn">Generar CoDi</p>
+          </button>
         </div>
       </section>
     </>

@@ -74,7 +74,7 @@ const Transactions = () => {
                         className="btnShare"
                         onClick={() => {redirectAccounts(item.id, item.expenseName, item.date, item.amountToPay,)}}
                       >
-                        Compartir
+                        Dividir
                       </button>
                     </section>
                   </div>
