@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { ModalAddAccount } from "./ModalAddAccount";
 import '../styles/abstracts/sharingwith.scss';
 import cardDebito from '../img/cardBank.png';
 
@@ -8,6 +9,7 @@ const SharingWith = () => {
   const [data, setData] =useState({
     cards:[]
   })
+  const [objPopup, setPopup] = useState({ visibility: false });
 
   const getAllClients = () => {
     fetch("https://6305077894b8c58fd72a83cd.mockapi.io/people")
@@ -21,9 +23,8 @@ const SharingWith = () => {
   useEffect(() => {
     getAllClients();
   }, []);
-
- 
-  const handleChange = () => {
+  
+    const handleChange = () => {
     setChecked(!checked);
   };
 
@@ -31,7 +32,22 @@ const SharingWith = () => {
     setData({...data, cards:[...data.cards, card]})
   }
 
+  const onAdd = () => {
+    let popupProduct = {};
+    setPopup({ visibility: true, popupProduct });
+  };
+  const onClickHide = () => {
+    getAllClients();
+    setPopup({ visibility: false });
+  };
+
   return (
+    <>
+      <ModalAddAccount
+        onClickCloseModal={onClickHide}
+        visible={objPopup.visibility}
+        attrProduct={objPopup.popupProduct}
+      />
     <section className="containerClients">
       <p className="h1 d-flex justify-content-center tittle-sharing">2. Compartir con:</p>
       <section className="list-clients">
@@ -56,17 +72,18 @@ const SharingWith = () => {
                   </section>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </section>
+
+        <div className="container-btn">
+          <button className="btn-newperson" onClick={onAdd}>
+            $ Nueva Persona
+          </button>
+          <button className="btn-dg">Dividir Gastos</button>
+        </div>
       </section>
-
-      <div className='container-btn'>
-        <button className='btn-newperson'>$ Nueva Persona</button>
-        <button className='btn-dg'>Dividir Gastos</button>
-      </div>
-    </section>
-
+    </>
   );
 };
 
