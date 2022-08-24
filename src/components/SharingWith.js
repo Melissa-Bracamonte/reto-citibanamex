@@ -9,6 +9,8 @@ import { useNavigate } from "react-router-dom";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
+  const [totalDivision, setTotalDivision]= useState();
+  
   const [data, setData] = useState({
     cards: [],
   });
@@ -44,11 +46,25 @@ const SharingWith = () => {
       });
     }
   };
+  const divisionCuenta=(total)=>{
+    let division = 0;
+   
+    division = 800 / total +1;
+    
+    setTotalDivision(division);
+    return division;
+    
+  }
   const totalCheckList=()=>{
     const total = data.cards.length;
     console.log(total)
+    console.log(divisionCuenta(total));
   } 
 
+
+
+ 
+ 
 
 
   const onAdd = () => {
