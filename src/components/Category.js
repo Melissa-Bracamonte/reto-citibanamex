@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { ModalAddAccount } from "./ModalAddAccount";
-import "../styles/abstracts/sharingwith.scss";
+import "../styles/abstracts/category.scss";
 import cardDebito from "../img/cardBank.png";
-import { FaDollarSign } from "react-icons/fa";
-import { BsFillPeopleFill } from "react-icons/bs";
-import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from "react-icons/bi";
-import { useLocation } from "react-router";
+import { BiQuestionMark } from 'react-icons/bi';
+import hogar from '../img/hogar.png'
+import trasnporte from '../img/transporte.png'
+import bienestar from '../img/bienestar.png'
+import salud from '../img/salud.png'
+import educacion from '../img/educacion.png'
+import mascotas from '../img/mascotas.png'
 
-
-const SharingWith = () => {
+const Category = () => {
   const [clients, setClients] = useState([]);
   const [totalDivision, setTotalDivision] = useState();
-  const { state } = useLocation();
 
   const [data, setData] = useState({
     cards: [],
@@ -37,9 +37,11 @@ const SharingWith = () => {
   }, []);
 
   const totalToSplit = () => {
-   const selectInfo= state.amountTopay;
-    console.log(selectInfo)
+    fetch("https://6305077894b8c58fd72a83cd.mockapi.io/expenses")
+      .then((response) => response.json())
+      .then((expenses) => setTotalAmount(expenses));
   };
+  console.log(totalAmount);
 
   useEffect(() => {
     totalToSplit();
@@ -48,7 +50,7 @@ const SharingWith = () => {
   const handleChange = (e) => {
     const checked = e.target.checked;
     const value = e.target.id;
-    // const name = e.target.name;
+
     const { cards } = data;
 
     if (checked) {
@@ -61,18 +63,20 @@ const SharingWith = () => {
       });
     }
   };
-  const divisionCuenta = (total, totalToSplit) => {
+  const divisionCuenta = (total) => {
     let division = 0;
-    division = totalToSplit / (total + 1);
+
+    division = 800 / total + 1;
 
     setTotalDivision(division);
     return division;
-  };
 
+  }
   const totalCheckList = () => {
     const total = data.cards.length;
-    console.log(divisionCuenta(total, state.amountTopay));
-  };
+    console.log(total)
+    console.log(divisionCuenta(total));
+  }
 
   const onAdd = () => {
     let popupProduct = {};
@@ -84,17 +88,14 @@ const SharingWith = () => {
     setPopup({ visibility: false });
   };
 
-  const redirectBack = () => {
-    navigate("/movimientos");
+
+
+  const redirectHome = () => {
+    navigate("/");
   };
   const redirectInformation = () => {
     navigate("/informacion");
   };
-
-  const redirectCodi = () => {
-    navigate("/codi");
-  };
-
   return (
     <>
       <ModalAddAccount
@@ -102,9 +103,24 @@ const SharingWith = () => {
         visible={objPopup.visibility}
         attrProduct={objPopup.popupProduct}
       />
-      <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
+      <AiOutlineArrowLeft className="arrowBack" onClick={redirectHome} />
       <BiQuestionMark className="question" onClick={redirectInformation} />
-      <section className="containerClients">
+      <section className="container-cat">
+        <p className="h1 d-flex justify-content-center tittle-sharing">
+          1. Selecciona tu categoria:
+        </p>
+        <section className="list-cat">
+          <div className="ctn-icon">
+            <img className="icon-cat" src={hogar} alt="icon" />
+            <img className="icon-cat" src={trasnporte} alt="icon" />
+            <img className="icon-cat" src={bienestar} alt="icon" />
+            <img className="icon-cat" src={salud} alt="icon" />
+            <img className="icon-cat" src={educacion} alt="icon" />
+            <img className="icon-cat" src={mascotas} alt="icon" />
+          </div>
+
+        </section>
+
         <p className="h1 d-flex justify-content-center tittle-sharing">
           2. Compartir con:
         </p>
@@ -122,7 +138,7 @@ const SharingWith = () => {
                       />
                       <div className="card-data">
                         <h5 className="card-title  double">
-                          {item.name} <br />{" "}
+                          {item.name} <br /> {" "}
                           {maskifyCardsContact(item.cardNumber)}{" "}
                         </h5>
                         <h6 className="card-subtitle mb-1 text-muted double-upper">
@@ -146,65 +162,12 @@ const SharingWith = () => {
             );
           })}
         </section>
-
-        <div className="container-btn">
-          <button className="btn-newperson" onClick={onAdd}>
-            <FaDollarSign className="icon-dollar" />{" "}
-            <p className="txt-btn">Nueva Cuenta</p>
-          </button>
-          <button className="btn-dg">
-            {" "}
-            <BsFillPeopleFill />{" "}
-            <p className="txt-btn" onClick={totalCheckList}>
-              Dividir Gastos
-            </p>
-          </button>
-        </div>
-
-        {/* <SplitAccount data={data} /> */}
-        <div className="card result">
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Daniela Miñon</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                25/07
-              </h6>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">$400.00</p>
-            </section>
-          </div>
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Melissa Bracamonte</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                25/07
-              </h6>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">$400.00</p>
-            </section>
-          </div>
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Total</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-              </h6>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">$800.00</p>
-            </section>
-          </div>
-        </div>
-        <div className="container-return">
-          <button className="return">
-            {" "}
-            <MdQrCode /> <p className="txt-btn" onClick={redirectCodi}>Generar CoDi</p>
-          </button>
+        <div className="container-add">
+          <button className="add"><p className="txt-btn">Agregar</p></button>
         </div>
       </section>
     </>
   );
 };
 
-export default SharingWith;
+export default Category;

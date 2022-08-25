@@ -1,0 +1,137 @@
+body {
+  background-color: #056dae;
+}
+
+.container-cat {
+  margin: 15px auto;
+  width: 370px;
+  padding: 0px;
+
+}
+
+.list-cat {
+  width: 300px;
+  height: 280px;
+  margin: auto;
+}
+
+.ctn-icon {
+  margin-top: 20px 0;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 85px 85px 85px;
+
+
+}
+
+.icon-cat {
+  justify-self: center;
+  transform: scale(0.8);
+
+}
+
+.txt-icon {
+  color: #ffffff;
+}
+
+.list-clients {
+  width: 370px;
+  height: 250px;
+  overflow-y: scroll;
+
+}
+
+.tittle-sharing {
+  color: #ffffff;
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.baseSimple {
+  margin: 5px;
+
+}
+
+.card-inf {
+  width: 300px;
+}
+
+.card-imgDebito {
+  width: 45px;
+  height: 30px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.double {
+  font-size: 15px;
+  font-weight: bold;
+
+}
+
+.double-upper {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.txt-btn {
+  margin: 0;
+  font-size: 15px;
+  text-align: center;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+
+::-webkit-scrollbar-track {
+  background: #B6B6BA;
+  border-radius: 100vw;
+  margin-block: 0.5em;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #76b2e8;
+  border: 0.1em solid#1260a5;
+  border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(#1260a5);
+}
+
+.result {
+  width: 370px;
+  border-radius: 6px;
+  margin-top: 30px;
+
+}
+
+.txt-res {
+  font-size: 20px;
+  width: 75px;
+}
+
+.container-add {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.add {
+  width: 150px;
+  height: 48px;
+  background-color: #00BBEE;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+}
+
+.question {
+  color: #ffffff;
+  width: 30px;
+  height: 28px;
+  margin: 20px 0 0 300px;
+}
