@@ -83,7 +83,9 @@ const Transactions = () => {
                       </h6>
                     </section>
                     <section className="p-0 d-flex flex-column">
-                      <p className="card-text amountCard">${item.amountToPay}</p>
+                      <p className="card-text amountCard">
+                        ${item.amountToPay}
+                      </p>
                       <button
                         type="button"
                         className="btnShare"
