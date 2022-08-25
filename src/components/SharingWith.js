@@ -8,8 +8,7 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useLocation } from "react-router";
-import {TiGroup} from 'react-icons/ti';
-
+import { TiGroup } from "react-icons/ti";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
@@ -67,7 +66,6 @@ const SharingWith = () => {
 
     setTotalDivision(division.toFixed(2));
     return division;
-  
   };
 
   const totalCheckList = () => {
@@ -92,7 +90,15 @@ const SharingWith = () => {
   };
 
   const redirectCodi = () => {
-    navigate("/codi", { state: { id: state.id, expenseName: state.expenseName, date:state.date, amountTopay:state.amountToPay , totalDivision:totalDivision}});
+    navigate("/codi", {
+      state: {
+        id: state.id,
+        expenseName: state.expenseName,
+        date: state.date,
+        amountTopay: state.amountToPay,
+        totalDivision: totalDivision,
+      },
+    });
   };
 
   return (
@@ -159,28 +165,27 @@ const SharingWith = () => {
             </p>
           </button>
         </div>
-{viewTotal === true && (
-
-        <div className="card result">
-          <div className="card-body d-flex flex-row justify-content-between p-1 linea">
-            <section className="mr-auto p-1 ">
-            <TiGroup className="icon-people" />{" "}
-             <h5 className="card-title"> {total + 1} personas</h5>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">${totalDivision}</p>
-            </section>
+        {viewTotal === true && (
+          <div className="card result">
+            <div className="card-body d-flex flex-row justify-content-between p-1 linea">
+              <section className="mr-auto p-1 ">
+                <TiGroup className="icon-people" />{" "}
+                <h5 className="card-title"> {total + 1} personas</h5>
+              </section>
+              <section className="p-1 d-flex flex-column ">
+                <p className="card-text txt-res">${totalDivision}</p>
+              </section>
+            </div>
+            <div className="card-body d-flex flex-row justify-content-between p-1">
+              <section className="mr-auto p-1">
+                <h5 className="card-title total">Total</h5>
+              </section>
+              <section className="p-1 d-flex flex-column ">
+                <p className="card-text txt-res">${totalAmount}</p>
+              </section>
+            </div>
           </div>
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-             <h5 className="card-title total">Total</h5>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">${totalAmount}</p>
-            </section>
-          </div>
-        </div>
-)}
+        )}
         <div className="container-return">
           <button className="return">
             {" "}
