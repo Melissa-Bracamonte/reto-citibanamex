@@ -9,8 +9,6 @@ import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiQuestionMark } from "react-icons/bi";
 import { useLocation } from "react-router";
-import SplitAccount from "./SplitAccount";
-import Codi from "./Codi";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
