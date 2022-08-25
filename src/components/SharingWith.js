@@ -92,7 +92,7 @@ const SharingWith = () => {
   };
 
   const redirectCodi = () => {
-    navigate("/codi");
+    navigate("/codi", { state: { id: state.id, expenseName: state.expenseName, date:state.date, amountTopay:state.amountToPay , totalDivision:totalDivision}});
   };
 
   return (
