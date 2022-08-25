@@ -10,7 +10,6 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiQuestionMark } from "react-icons/bi";
 import { useLocation } from "react-router";
 
-
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
   const [totalDivision, setTotalDivision] = useState();
