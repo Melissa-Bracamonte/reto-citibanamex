@@ -65,6 +65,7 @@ const SharingWith = () => {
 
     setTotalDivision(division.toFixed(2));
     return division;
+  
   };
 
   const totalCheckList = () => {
