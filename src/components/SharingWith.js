@@ -8,6 +8,8 @@ import { BsFillPeopleFill } from "react-icons/bs";
 import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useLocation } from "react-router";
+import {TiGroup} from 'react-icons/ti';
+
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
@@ -37,7 +39,7 @@ const SharingWith = () => {
 
   const totalToSplit = () => {
     const selectInfo = state.amountTopay;
-    console.log(selectInfo);
+    setTotalAmount(selectInfo.toFixed(2));
   };
 
   useEffect(() => {
@@ -157,22 +159,28 @@ const SharingWith = () => {
             </p>
           </button>
         </div>
+{viewTotal === true && (
 
-        {viewTotal === true && (
-          <div className="card result">
-            <div className="card-body d-flex flex-row justify-content-between p-1">
-              <section className="mr-auto p-1">
-                <h5 className="card-title">
-                  Total dividido entre {total + 1} personas
-                </h5>
-              </section>
-              <section className="p-1 d-flex flex-column ">
-                <p className="card-text txt-res">${totalDivision}</p>
-              </section>
-            </div>
+        <div className="card result">
+          <div className="card-body d-flex flex-row justify-content-between p-1 linea">
+            <section className="mr-auto p-1 ">
+            <TiGroup className="icon-people" />{" "}
+             <h5 className="card-title"> {total + 1} personas</h5>
+            </section>
+            <section className="p-1 d-flex flex-column ">
+              <p className="card-text txt-res">${totalDivision}</p>
+            </section>
           </div>
-        )}
-
+          <div className="card-body d-flex flex-row justify-content-between p-1">
+            <section className="mr-auto p-1">
+             <h5 className="card-title total">Total</h5>
+            </section>
+            <section className="p-1 d-flex flex-column ">
+              <p className="card-text txt-res">${totalAmount}</p>
+            </section>
+          </div>
+        </div>
+)}
         <div className="container-return">
           <button className="return">
             {" "}
