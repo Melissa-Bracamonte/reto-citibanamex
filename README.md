@@ -1,5 +1,5 @@
 # Comparte tus gastos (Challenge Citibanamex Talent Fest)
-<p align="center"><img src="![LogoCitiCoders](https://user-images.githubusercontent.com/97549677/186738750-4105abc6-0f89-4953-9883-55dad944f142.png)"/> </p>
+<p align="center"><img src="https://user-images.githubusercontent.com/97549677/186753875-879504de-7b31-4155-8839-54a97f507b32.png"/> </p>
 
 ## Índice
 
@@ -48,7 +48,6 @@ En Citibanamex queremos ayudar a nuestros clientes a compartir gastos con su fam
 ![pantalla2](https://user-images.githubusercontent.com/97549677/186747758-9c3791e0-8bf7-48ba-a4db-6ec03e0be7d3.png)
 ![pantalla4](https://user-images.githubusercontent.com/97549677/186747178-81efcb64-684a-4b0f-8416-c5ce07128b9c.png)
 ![pantalla3](https://user-images.githubusercontent.com/97549677/186747362-5d63363a-b618-4b2e-abad-35de13764adb.png)
-![modalciti](https://user-images.githubusercontent.com/97549677/186747556-3a880879-5485-41ce-8def-af0f980b170a.png)
 ![codigoqr](https://user-images.githubusercontent.com/97549677/186750386-a1e4a6af-e054-4328-ba30-365cf6473373.png)
 ![transaccion](https://user-images.githubusercontent.com/97549677/186748372-0a21e737-251f-4863-b120-fb483853fdd8.png)
 
