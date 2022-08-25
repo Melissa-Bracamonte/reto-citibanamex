@@ -7,7 +7,6 @@ import { useLocation } from "react-router";
 function Codi() {
   const { state } = useLocation();
   const stringCode="https://citibanamex-app.vercel.app//codeqr?monto="+encodeURIComponent(state.totalDivision)+"&&concepto="+encodeURIComponent(state.expenseName);
-
   return (
     <section className="containerCodi d-flex flex-column">
       <div className="p-2">
