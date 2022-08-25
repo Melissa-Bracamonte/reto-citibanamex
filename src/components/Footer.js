@@ -1,14 +1,12 @@
-import "../styles/abstracts/cards.scss";
-import { IoMdHelpCircle } from "react-icons/io";
-import { FaDollarSign } from "react-icons/fa";
-import { MdGroups } from "react-icons/md";
-import { BsGraphUp } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import '../styles/abstracts/cards.scss';
+import { IoMdHelpCircle } from 'react-icons/io';
+import { FaDollarSign } from 'react-icons/fa';
+import { BsGraphUp } from 'react-icons/bs';
 
 function Footer() {
   return (
-    <div className="card-footer fixed-bottom">
-      <div className="d-flex flex-row">
+    <div className='card-footer d-flex fixed-bottom'>
+      <div className="d-flex flex-row" id="space-footer">
         <div className="p-2">
           <button className="button-footer">
             <IoMdHelpCircle />
@@ -29,15 +27,6 @@ function Footer() {
             <br />
             Invertir
           </button>
-        </div>
-        <div className="p-2">
-          <Link to="/categoria">
-            <button className="button-footer">
-              <MdGroups />
-              <br />
-              Comparte tus gastos
-            </button>
-          </Link>
         </div>
       </div>
     </div>
