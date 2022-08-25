@@ -25,11 +25,11 @@
 
 
 ## 2. Conoce nuestra aplicación y comparte tus gastos.
- Prueba nuestra aplicación y está funcionalidad que hemosvpensado para ti, aquí puedes elegir un gasto en tus movimientos bancarios, elegir con que personas quieres compartir el gasto y nosotros hacemos toda la magia.
+ Prueba nuestra aplicación y está funcionalidad que hemos pensado para ti, aquí puedes elegir un gasto en tus movimientos bancarios, elegir con que personas quieres compartir el gasto y nosotros hacemos toda la magia.
  
  Visita nuestra App aquí [click aqui ](https://citibanamex-app.vercel.app/)
  
- Nota: Nuestra App fue desarrollada para dispositivos móviles por lo cual te recomendamos que si deseas visualizarla en una computadora, ajustes la pantalla de visualización con las medidas de 390x844px.
+ **Nota:** nuestra App fue desarrollada para dispositivos móviles por lo cual te recomendamos que si deseas visualizarla en una computadora, ajustes la pantalla de visualización con las medidas de 390x844px.
 
 
 
