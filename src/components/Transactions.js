@@ -18,7 +18,7 @@ const Transactions = () => {
     getAllTransaction();
   }, []);
 
-  const saveAmountToPay = (amountToPay) => {
+  const spendingHistory = (amountToPay) => {
     fetch("https://6305077894b8c58fd72a83cd.mockapi.io/expenses", {
       method: "POST",
       headers: {
@@ -36,12 +36,12 @@ const Transactions = () => {
     navigate("/compartir", { state: { id: id, expenseName: expenseName, date:date, amountTopay:amountToPay } });
     // console.log(id);
     // setId(id);
-    // saveAmountToPay({
-    //   expenseName: expenseName,
-    //   date: date,
-    //   amountToPay: amountToPay,
-    //   id: id
-    // });
+    spendingHistory({
+      expenseName: expenseName,
+      date: date,
+      amountToPay: amountToPay,
+      id: id
+    });
   };
 
   const redirectBack = () => {
