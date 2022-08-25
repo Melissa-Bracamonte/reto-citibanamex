@@ -72,6 +72,9 @@ const Category = () => {
     return division;
 
   }
+  const viewTransaction=()=>{
+    navigate("/movimientos");
+  }
   const totalCheckList = () => {
     const total = data.cards.length;
     console.log(total)
@@ -163,7 +166,7 @@ const Category = () => {
           })}
         </section>
         <div className="container-add">
-          <button className="add"><p className="txt-btn">Agregar</p></button>
+          <button className="add" onClick={viewTransaction}><p className="txt-btn">Agregar</p></button>
         </div>
       </section>
     </>

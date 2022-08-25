@@ -8,6 +8,7 @@ import SharingWith from "./components/SharingWith";
 import Category from "./components/Category";
 import Codi from "./components/Codi";
 import SpendingHistory from "./components/SpendingHistory";
+import CodeQR from "./components/CodeQR";
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path="/categoria" element={<Category />} />
           <Route path="/codi" element={<Codi />} />
           <Route path="/historial" element={<SpendingHistory/>} />
+          <Route path="/codeqr" element={<CodeQR/>} />
         </Routes>
       </BrowserRouter>
     </div>
