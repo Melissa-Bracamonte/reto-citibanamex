@@ -7,7 +7,6 @@ import { FaDollarSign } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from "react-icons/bi";
 import { useLocation } from "react-router";
 import {TiGroup} from 'react-icons/ti';
 
@@ -68,6 +67,7 @@ const SharingWith = () => {
 
     setTotalDivision(division.toFixed(2));
     return division;
+  
   };
 
   const totalCheckList = () => {
@@ -90,9 +90,6 @@ const SharingWith = () => {
   const redirectBack = () => {
     navigate("/movimientos");
   };
-  const redirectInformation = () => {
-    navigate("/informacion");
-  };
 
   const redirectCodi = () => {
     navigate("/codi");
@@ -106,7 +103,6 @@ const SharingWith = () => {
         attrProduct={objPopup.popupProduct}
       />
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
-      <BiQuestionMark className="question" onClick={redirectInformation} />
       <section className="containerClients">
         <p className="h1 d-flex justify-content-center tittle-sharing">
           2. Compartir con:
@@ -163,7 +159,6 @@ const SharingWith = () => {
             </p>
           </button>
         </div>
-
 {viewTotal === true && (
 
         <div className="card result">
@@ -189,7 +184,10 @@ const SharingWith = () => {
         <div className="container-return">
           <button className="return">
             {" "}
-            <MdQrCode /> <p className="txt-btn" onClick={redirectCodi}>Generar CoDi</p>
+            <MdQrCode />{" "}
+            <p className="txt-btn" onClick={redirectCodi}>
+              Generar CoDi
+            </p>
           </button>
         </div>
       </section>

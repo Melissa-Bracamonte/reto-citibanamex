@@ -7,6 +7,7 @@ import Information from "./components/Information";
 import SharingWith from "./components/SharingWith";
 import Category from "./components/Category";
 import Codi from "./components/Codi";
+import SpendingHistory from "./components/SpendingHistory";
 
 function App() {
 
@@ -14,14 +15,13 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-          </Route>
-          <Route path="/movimientos" element={<Transactions />}>
-          </Route>
+          <Route path="/" element={<Home />}/>
+          <Route path="/movimientos" element={<Transactions />}/>
           <Route path="/informacion" element={<Information />} />
           <Route path="/compartir" element={<SharingWith />} />
           <Route path="/categoria" element={<Category />} />
           <Route path="/codi" element={<Codi />} />
+          <Route path="/historial" element={<SpendingHistory/>} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -4,23 +4,78 @@ $primary-letter: white;
 $secondary-color: #f8f8f8;
 $button-color: #00bbee;
 
+// .containerTransactions{
+//   display: flex;
+//   flex-direction: column;
+//   align-items: flex-end;
+// }
+
 .arrowBack {
-  width: 27px;
-  height: 25px;
-  margin: 20px 0 0 20px;
-  color: $secondary-color;
+    width: 27px;
+    height: 25px;
+    margin: 20px 0 0 20px;
+    color: $secondary-color;
 }
 
 .title {
-  margin-top: 15px;
-  color: $primary-letter;
+    margin-top: 15px;
+    color: $primary-letter;
+    white-space: nowrap;
 }
 
 .allTransactions {
-  padding-top: 40px;
+    margin:55px 15px 0 15px;
+    width: 350px;
+    height: 500px;
+    overflow-y: scroll;
+
   .btnShare {
     background-color: $button-color;
     border: none;
     color: $primary-letter;
+    
   }
+ 
+  ::-webkit-scrollbar {
+    width: 1em;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #B6B6BA;
+    border-radius: 90vw;
+    margin-block: 0.5em;
+    
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #76b2e8;
+    border: 0.1em solid#1260a5;
+    border-radius: 100vw;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(#1260a5);
+  }
+}
+
+.spendingContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 177px;
+
+.btnSpendingHistory{
+  // display: flex;
+  background: none;
+  border: none;
+  margin-top: 30px;
+  // margin-right: 70px;
+  .img{
+    margin-top: 25px;
+  }
+}
+
+.textBtn{
+  white-space: nowrap;
+  color: $secondary-color;
+}
 }
