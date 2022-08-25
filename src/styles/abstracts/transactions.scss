@@ -4,11 +4,13 @@ $primary-letter: white;
 $secondary-color: #f8f8f8;
 $button-color: #00bbee;
 
-// .containerTransactions{
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-end;
-// }
+.containerTransactions{
+display: flex;
+// justify-content: center;
+  flex-direction: column;
+  // align-items: flex-end;
+  align-items: flex-start;
+}
 
 .arrowBack {
     width: 27px;
@@ -24,16 +26,17 @@ $button-color: #00bbee;
 }
 
 .allTransactions {
-    margin:55px 15px 0 15px;
+    // margin:55px 15px 0 15px;
     width: 350px;
     height: 500px;
     overflow-y: scroll;
+    margin:25px 0 0 25px;
 
   .btnShare {
     background-color: $button-color;
     border: none;
     color: $primary-letter;
-    
+    padding: 0;
   }
  
   ::-webkit-scrollbar {
@@ -78,4 +81,8 @@ $button-color: #00bbee;
   white-space: nowrap;
   color: $secondary-color;
 }
+}
+
+.amountCard{
+  white-space: nowrap;
 }

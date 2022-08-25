@@ -26,7 +26,7 @@ const SpendingHistory = () => {
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
       <section className="containerTransactions">
         <p className="h2 d-flex justify-content-center titleHeader">
-        Historial de gastos compartidos
+        Historial de gastos<br/>compartidos
         </p>
         <section className="allTransactions">
           {spending.map((item) => {
@@ -34,14 +34,14 @@ const SpendingHistory = () => {
               <div key={item.id}>
                 <div className="card">
                   <div className="card-body d-flex flex-row justify-content-between">
-                    <section className="mr-auto p-2">
+                    <section className="mr-auto p-0 d-flex flex-column">
                       <h5 className="card-title">{item.expenseName}</h5>
                       <h6 className="card-subtitle mb-2 text-muted">
                         {item.date}
                       </h6>
                     </section>
-                    <section className="p-2 d-flex">
-                      <p className="card-text">${item.amountToPay}</p>
+                    <section className="p-0 d-flex flex-column">
+                      <p className="card-text amountCard">${item.amountToPay}</p>
                     </section>
                   </div>
                 </div>
@@ -49,12 +49,12 @@ const SpendingHistory = () => {
             );
           })}
         </section>
-        <div className="container-return">
+        {/* <div className="container-return">
         <button className="return">
             {" "}
             <p className="txt-btn">Cerrar</p>
           </button>
-          </div>
+          </div> */}
       </section>
     </>
   );
