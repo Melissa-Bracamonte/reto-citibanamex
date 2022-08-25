@@ -6,6 +6,7 @@ import '../styles/abstracts/cards.scss';
 
 function Home() {
   return (
+    <section className="containerScreenHome">
     <div className="d-flex" id='ad'>
       <nav className="navbar fixed-top">
   <div className="container-fluid">
@@ -69,7 +70,7 @@ function Home() {
     
     </div>
     
-    
+    </section>
   );
 }
 

@@ -8,23 +8,23 @@ function Codi() {
   const { state } = useLocation();
 const stringCode="http://192.168.1.201:3000/codeqr?monto="+ state.totalDivision+"&&concepto="+encodeURIComponent(state.expenseName);
   return (
-    <section className="containerCodi d-flex flex-column">
-        
+    <section className="containerScreenCodi">
+        <div className="containerCodi d-flex flex-column ">
         <div className="p-2">
         
             <div className="titleCodi d-flex flex-column">
             <img className="logocitibanamex" src={logociti} alt="logociti" />
         <p className="subtitle">¡Código listo!</p>
         <p className="">Comparte este código con la persona que te enviará el dinero</p>
-      <div className="containerCode">
-        <QRCode  className="code"value={stringCode}>
+      <div className="containerCode d-flex">
+        <QRCode  className="code"value={stringCode} size={200}>
         </QRCode>
         </div>
         </div>
       </div>
       <div className="p-2">
       
-      <table className="table">
+      <table className="table" id="tableHeight">
    <tbody>
     <tr>
       <th scope="row" className="table-left">Cuenta para recibir dinero</th>
@@ -44,11 +44,11 @@ const stringCode="http://192.168.1.201:3000/codeqr?monto="+ state.totalDivision+
       
       
       </div>
-      <Link to="/">
-      <button className='btn-dg p-2'><p className="txt-btn">Cerrar</p></button>
+      <Link to="/" className="p-2">
+      <button className='btn-dg '><p className="txt-btn">Cerrar</p></button>
                 </Link>
    
-      
+                </div>
     </section>
   );
 }
