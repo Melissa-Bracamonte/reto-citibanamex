@@ -3,18 +3,22 @@ $third-color: #005387;
 $fourth-color: #056dae;
 
 
-
+.navbar{
+  margin-right: 50px;
+  width: 390px;
+}
 .navbar-brand{
     color: $secondary-color;
     font-size: 25px;
+    
     
   }
 
  
 #ad{
     justify-content: center;
-    height: 100%;
-    width: 100%;
+    height: 844px;
+    width: 390px;
 }
 
 
@@ -22,12 +26,13 @@ $fourth-color: #056dae;
     display: flex;
     padding-top: 50px;
     flex-direction: column;
-    height: 90%;
-    width: 90%;
+    height: 100px;
+    width: 390px;
     margin-top: 50px;
     padding: 0px;
   font-family: Interstate, sans-serif;
   background-color: $fourth-color;
+  align-items: center;
   
    
 }
@@ -51,7 +56,7 @@ $fourth-color: #056dae;
 #container-viewmore{
   display: flex;
   margin: 10px;
-  width: 300px;
+  width: 270px;
   height: 50px;
     
 }
@@ -66,7 +71,7 @@ $fourth-color: #056dae;
 }
    .container-subtitle{
     background-color: $third-color;
-    width: 280px;
+    width: 270px;
     flex-direction: start;
     border-radius: 5px;
     
@@ -83,7 +88,7 @@ $fourth-color: #056dae;
 .container-cards-debito, .container-cards-credito{
     background-color: $secondary-color;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     flex-direction: row;
     align-items: center;
     width: 270px;
@@ -120,13 +125,14 @@ $fourth-color: #056dae;
 //footer
 .footer {
     bottom: 0px;
-    width: 100%;
+    width: 390px;
     text-align: center;
     background-color: #05588D;
   }
 
  .card-footer{
     background-color: #05588D;
+    margin-left: 0px;
   }
 
 .button-footer{
