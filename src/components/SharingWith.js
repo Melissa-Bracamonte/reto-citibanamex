@@ -7,7 +7,6 @@ import { FaDollarSign } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
 import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from "react-icons/bi";
 import { useLocation } from "react-router";
 
 const SharingWith = () => {
@@ -37,8 +36,8 @@ const SharingWith = () => {
   }, []);
 
   const totalToSplit = () => {
-   const selectInfo= state.amountTopay;
-    console.log(selectInfo)
+    const selectInfo = state.amountTopay;
+    console.log(selectInfo);
   };
 
   useEffect(() => {
@@ -48,7 +47,6 @@ const SharingWith = () => {
   const handleChange = (e) => {
     const checked = e.target.checked;
     const value = e.target.id;
-    // const name = e.target.name;
     const { cards } = data;
 
     if (checked) {
@@ -89,9 +87,6 @@ const SharingWith = () => {
   const redirectBack = () => {
     navigate("/movimientos");
   };
-  const redirectInformation = () => {
-    navigate("/informacion");
-  };
 
   const redirectCodi = () => {
     navigate("/codi");
@@ -105,7 +100,6 @@ const SharingWith = () => {
         attrProduct={objPopup.popupProduct}
       />
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
-      <BiQuestionMark className="question" onClick={redirectInformation} />
       <section className="containerClients">
         <p className="h1 d-flex justify-content-center tittle-sharing">
           2. Compartir con:
@@ -163,29 +157,28 @@ const SharingWith = () => {
           </button>
         </div>
 
-{viewTotal === true && (
-
-        <div className="card result">
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Total dividido entre {total + 1} personas</h5>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">${totalDivision}</p>
-            </section>
+        {viewTotal === true && (
+          <div className="card result">
+            <div className="card-body d-flex flex-row justify-content-between p-1">
+              <section className="mr-auto p-1">
+                <h5 className="card-title">
+                  Total dividido entre {total + 1} personas
+                </h5>
+              </section>
+              <section className="p-1 d-flex flex-column ">
+                <p className="card-text txt-res">${totalDivision}</p>
+              </section>
+            </div>
           </div>
-        </div>
-)}
-  
+        )}
 
-
-
-
-       
         <div className="container-return">
           <button className="return">
             {" "}
-            <MdQrCode /> <p className="txt-btn" onClick={redirectCodi}>Generar CoDi</p>
+            <MdQrCode />{" "}
+            <p className="txt-btn" onClick={redirectCodi}>
+              Generar CoDi
+            </p>
           </button>
         </div>
       </section>

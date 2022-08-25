@@ -1,18 +1,22 @@
 import React from "react";
 import "../styles/abstracts/information.scss";
 import logociti from "../../src/img/logociti.png";
-import flecha1 from "../../src/img/flecha1.png";
+import { AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
 const Information = () => {
-
   const navigate = useNavigate();
+
+  const redirectSharingWith = () => {
+    navigate("/movimientos");
+  };
 
   return (
     <>
-      <div className="narrow1">
-          <img className="narrow1" src={flecha1} alt="narrow1" onClick={() => navigate('/movimientos')} />
-      </div>
+      <AiOutlineClose
+        className="closeInformation"
+        onClick={redirectSharingWith}
+      />
       <div className="container">
         <div className="headerContainer">
           <img className="logociti" src={logociti} alt="logociti" />
