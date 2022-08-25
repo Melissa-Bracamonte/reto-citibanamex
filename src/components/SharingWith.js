@@ -5,13 +5,17 @@ import "../styles/abstracts/sharingwith.scss";
 import cardDebito from "../img/cardBank.png";
 import { FaDollarSign } from "react-icons/fa";
 import { BsFillPeopleFill } from "react-icons/bs";
-import { MdQrCode } from 'react-icons/md';
+import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from 'react-icons/bi';
+import { BiQuestionMark } from "react-icons/bi";
+import { useLocation } from "react-router";
+import SplitAccount from "./SplitAccount";
+import Codi from "./Codi";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
   const [totalDivision, setTotalDivision] = useState();
+  const { state } = useLocation();
 
   const [data, setData] = useState({
     cards: [],
@@ -34,11 +38,9 @@ const SharingWith = () => {
   }, []);
 
   const totalToSplit = () => {
-    fetch("https://6305077894b8c58fd72a83cd.mockapi.io/expenses")
-      .then((response) => response.json())
-      .then((expenses) => setTotalAmount(expenses));
+    const selectInfo = state.amountTopay;
+    console.log(selectInfo);
   };
-  console.log(totalAmount);
 
   useEffect(() => {
     totalToSplit();
@@ -47,7 +49,7 @@ const SharingWith = () => {
   const handleChange = (e) => {
     const checked = e.target.checked;
     const value = e.target.id;
-
+    // const name = e.target.name;
     const { cards } = data;
 
     if (checked) {
@@ -60,20 +62,18 @@ const SharingWith = () => {
       });
     }
   };
-  const divisionCuenta = (total) => {
+  const divisionCuenta = (total, totalToSplit) => {
     let division = 0;
-
-    division = 800 / total + 1;
+    division = totalToSplit / (total + 1);
 
     setTotalDivision(division);
     return division;
+  };
 
-  }
   const totalCheckList = () => {
     const total = data.cards.length;
-    console.log(total)
-    console.log(divisionCuenta(total));
-  }
+    console.log(divisionCuenta(total, state.amountTopay));
+  };
 
   const onAdd = () => {
     let popupProduct = {};
@@ -90,6 +90,10 @@ const SharingWith = () => {
   };
   const redirectInformation = () => {
     navigate("/informacion");
+  };
+
+  const redirectCodi = () => {
+    navigate("/codi");
   };
 
   return (
@@ -119,7 +123,7 @@ const SharingWith = () => {
                       />
                       <div className="card-data">
                         <h5 className="card-title  double">
-                          {item.name} <br /> {" "}
+                          {item.name} <br />{" "}
                           {maskifyCardsContact(item.cardNumber)}{" "}
                         </h5>
                         <h6 className="card-subtitle mb-1 text-muted double-upper">
@@ -157,6 +161,8 @@ const SharingWith = () => {
             </p>
           </button>
         </div>
+
+        {/* <SplitAccount data={data} /> */}
         <div className="card result">
           <div className="card-body d-flex flex-row justify-content-between p-1">
             <section className="mr-auto p-1">
@@ -192,7 +198,10 @@ const SharingWith = () => {
           </div>
         </div>
         <div className="container-return">
-          <button className="return"> <MdQrCode /> <p className="txt-btn">Generar CoDi</p></button>
+          <button className="return">
+            {" "}
+            <MdQrCode /> <p className="txt-btn" onClick={redirectCodi}>Generar CoDi</p>
+          </button>
         </div>
       </section>
     </>
