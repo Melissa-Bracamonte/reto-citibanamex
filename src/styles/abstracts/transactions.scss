@@ -4,33 +4,57 @@ $primary-letter: white;
 $secondary-color: #f8f8f8;
 $button-color: #00bbee;
 
-.containerTransactions{
-display: flex;
-// justify-content: center;
+.cont-master {
+  width: 390;
+  display: flex;
   flex-direction: column;
-  // align-items: flex-end;
+
+}
+
+.containerTransactions {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
 }
 
+.icon-top {
+  width: 360px;
+  display: grid;
+  grid-template-columns: 180px 180px;
+  grid-template-rows: 60px;
+  align-self: center;
+}
+
 .arrowBack {
-    width: 27px;
-    height: 25px;
-    margin: 20px 0 0 20px;
-    color: $secondary-color;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  color: $secondary-color;
+  justify-self: flex-start;
+  align-self: flex-end;
+
+}
+
+.icon-quest {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  color: $secondary-color;
+  justify-self: flex-end;
+  align-self: flex-end;
 }
 
 .title {
-    margin-top: 15px;
-    color: $primary-letter;
-    white-space: nowrap;
+  color: $primary-letter;
+  text-align: center;
 }
 
 .allTransactions {
-    // margin:55px 15px 0 15px;
-    width: 350px;
-    height: 500px;
-    overflow-y: scroll;
-    margin:25px 0 0 25px;
+  // margin:55px 15px 0 15px;
+  width: 350px;
+  height: 500px;
+  overflow-y: scroll;
+  margin: 25px 0 0 25px;
 
   .btnShare {
     background-color: $button-color;
@@ -38,51 +62,58 @@ display: flex;
     color: $primary-letter;
     padding: 0;
   }
- 
+
   ::-webkit-scrollbar {
     width: 1em;
   }
-  
+
   ::-webkit-scrollbar-track {
     background: #B6B6BA;
     border-radius: 90vw;
     margin-block: 0.5em;
-    
+
   }
-  
+
   ::-webkit-scrollbar-thumb {
     background: #76b2e8;
     border: 0.1em solid#1260a5;
     border-radius: 100vw;
   }
-  
+
   ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(#1260a5);
   }
 }
 
-.spendingContainer{
-  display: flex;
-  flex-direction: column;
-  margin-left: 177px;
-
-.btnSpendingHistory{
+.btnSpendingHistory {
   // display: flex;
   background: none;
   border: none;
   margin-top: 30px;
+
   // margin-right: 70px;
-  .img{
-    margin-top: 25px;
-  }
+
 }
 
-.textBtn{
-  white-space: nowrap;
+.spendingContainer {
+  width: 380px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.icon-spend {
+  width: 50px;
+  height: 50px;
+  margin-top: 25px;
+}
+
+.textBtn {
   color: $secondary-color;
-}
+  text-align: center;
+  font-size: 18px;
 }
 
-.amountCard{
+
+.amountCard {
   white-space: nowrap;
 }

@@ -63,9 +63,11 @@ const Transactions = () => {
   };
 
   return (
-    <>
-      <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
-      <BiQuestionMark className="question" onClick={redirectInformation} />
+    <section className="cont-master">
+      <div className="icon-top">
+        <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
+        <BiQuestionMark className="icon-quest" onClick={redirectInformation} />
+      </div>
       <section className="containerTransactions">
         <p className="h2 d-flex justify-content-center title">
           1. Selecciona tu movimiento
@@ -74,7 +76,7 @@ const Transactions = () => {
           {transaction.map((item) => {
             return (
               <div key={item.id}>
-                <div className="card">
+                <div className="card baseSimple">
                   <div className="card-body d-flex flex-row justify-content-between card-expenses">
                     <section className="mr-auto p-0 d-flex flex-column">
                       <h5 className="card-title">{item.expenseName}</h5>
@@ -108,13 +110,11 @@ const Transactions = () => {
           })}
         </section>
         <section className="spendingContainer">
-          <button className="btnSpendingHistory" onClick={redirecHystory}>
-            <img src={btnSpendingHistory} alt="spendingHistory" />
-          </button>
-          <p className="textBtn">Historial de compartidos</p>
+          <img className="icon-spend" src={btnSpendingHistory} alt="spendingHistory" onClick={redirecHystory} />
+          <p className="textBtn">Historial de <br /> compartidos</p>
         </section>
       </section>
-    </>
+    </section>
   );
 };
 

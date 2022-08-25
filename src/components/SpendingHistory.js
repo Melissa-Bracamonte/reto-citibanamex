@@ -22,19 +22,18 @@ const SpendingHistory = () => {
   };
 
   return (
-    <>
-      <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
-      <section className="containerTransactions">
-        <p className="h2 d-flex justify-content-center titleHeader">
-          Historial de gastos
-          <br />
-          compartidos
+    <section className="cont-master">
+      <div className="icon-top">
+        <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
+      </div>      <section className="containerTransactions">
+        <p className="h2 d-flex justify-content-center title">
+          Historial de gastos compartidos
         </p>
-        <section className="allTransactions">
+        <section className="history">
           {spending.map((item) => {
             return (
               <div key={item.id}>
-                <div className="card">
+                <div className="card baseSimple">
                   <div className="card-body d-flex flex-row justify-content-between">
                     <section className="mr-auto p-0 d-flex flex-column">
                       <h5 className="card-title">{item.expenseName}</h5>
@@ -54,7 +53,8 @@ const SpendingHistory = () => {
           })}
         </section>
       </section>
-    </>
+    </section>
+
   );
 };
 
