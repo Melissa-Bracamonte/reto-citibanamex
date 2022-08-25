@@ -24,7 +24,6 @@ body {
 
 .baseSimple {
   margin: 5px;
-
 }
 
 .card-inf {
@@ -144,4 +143,26 @@ body {
   width: 30px;
   height: 28px;
   margin: 20px 0 0 300px;
+}
+
+.mr-auto{
+  display:flex;
+  flex-direction: row;
+}
+
+.icon-people{
+  margin: 6px 8px 0 10px;
+
+}
+
+.card-text{
+  margin-right: 50px;
+}
+
+.total{
+  margin-left: 85px;
+}
+
+.linea{
+  border-bottom: 1px solid #B6B6BA;
 }

@@ -9,6 +9,8 @@ import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiQuestionMark } from "react-icons/bi";
 import { useLocation } from "react-router";
+import {TiGroup} from 'react-icons/ti';
+
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
@@ -38,7 +40,7 @@ const SharingWith = () => {
 
   const totalToSplit = () => {
     const selectInfo = state.amountTopay;
-    console.log(selectInfo);
+    setTotalAmount(selectInfo.toFixed(2));
   };
 
   useEffect(() => {
@@ -48,7 +50,6 @@ const SharingWith = () => {
   const handleChange = (e) => {
     const checked = e.target.checked;
     const value = e.target.id;
-    // const name = e.target.name;
     const { cards } = data;
 
     if (checked) {
@@ -166,22 +167,25 @@ const SharingWith = () => {
 {viewTotal === true && (
 
         <div className="card result">
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Total dividido entre {total + 1} personas</h5>
+          <div className="card-body d-flex flex-row justify-content-between p-1 linea">
+            <section className="mr-auto p-1 ">
+            <TiGroup className="icon-people" />{" "}
+             <h5 className="card-title"> {total + 1} personas</h5>
             </section>
             <section className="p-1 d-flex flex-column ">
               <p className="card-text txt-res">${totalDivision}</p>
             </section>
           </div>
+          <div className="card-body d-flex flex-row justify-content-between p-1">
+            <section className="mr-auto p-1">
+             <h5 className="card-title total">Total</h5>
+            </section>
+            <section className="p-1 d-flex flex-column ">
+              <p className="card-text txt-res">${totalAmount}</p>
+            </section>
+          </div>
         </div>
 )}
-  
-
-
-
-
-       
         <div className="container-return">
           <button className="return">
             {" "}
