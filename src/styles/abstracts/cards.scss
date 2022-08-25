@@ -22,7 +22,10 @@ $fourth-color: #056dae;
     display: flex;
     padding-top: 50px;
     flex-direction: column;
-  
+    height: 90%;
+    width: 90%;
+    margin-top: 50px;
+    padding: 0px;
   font-family: Interstate, sans-serif;
   background-color: $fourth-color;
   
@@ -48,14 +51,18 @@ $fourth-color: #056dae;
 #container-viewmore{
   display: flex;
   margin: 10px;
+  width: 300px;
+  height: 50px;
     
 }
-#container-viewmore-start{
-  float: left;
+.viewmore-start, .viewmore-end {
+  height: inherit;
+  width: 150px;
+  display: flex;
 }
 
-#container-viewmore-end{
-  float: right;
+.font-p-gray{
+  width: inherit;
 }
    .container-subtitle{
     background-color: $third-color;
@@ -79,7 +86,7 @@ $fourth-color: #056dae;
     justify-content:space-around;
     flex-direction: row;
     align-items: center;
-    width: 350px;
+    width: 270px;
     border-left-width: 8px;
     border-left-style: solid;
   }
@@ -100,6 +107,8 @@ $fourth-color: #056dae;
   
   .card-img{
     width: 100px;
+    transform: scale(0.8);
+
   }
   
   .gray{
