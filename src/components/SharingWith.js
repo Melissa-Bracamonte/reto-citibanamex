@@ -108,7 +108,9 @@ const SharingWith = () => {
         visible={objPopup.visibility}
         attrProduct={objPopup.popupProduct}
       />
-      <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
+      <div className="icon-top">
+        <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
+      </div>
       <section className="containerClients">
         <p className="h1 d-flex justify-content-center tittle-sharing">
           2. Compartir con:
