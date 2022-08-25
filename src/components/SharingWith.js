@@ -36,8 +36,8 @@ const SharingWith = () => {
   }, []);
 
   const totalToSplit = () => {
-    const selectInfo = state.amountTopay;
-    console.log(selectInfo);
+   const selectInfo= state.amountTopay;
+    console.log(selectInfo)
   };
 
   useEffect(() => {
