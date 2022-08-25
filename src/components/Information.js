@@ -28,12 +28,12 @@ const Information = () => {
             sacar las cuentas, ¡nosotros lo hacemos por ti!
           </p>
           <p>Con esta nueva alternativa podrás:</p>
-          <p>1. Compartir tus gastos.</p>
-          <p>2. Eligir las personas con quienes compartirás ese gasto</p>
+          <p><strong>1.</strong> Compartir tus gastos.</p>
+          <p><strong>2.</strong> Eligir las personas con quienes compartirás ese gasto</p>
           <p>
-            3. Dividir la cuenta entre el número de personas que has elegido.
+          <strong>3.</strong> Dividir la cuenta entre el número de personas que has elegido.
           </p>
-          <p>4. Obtener un código QR para facilitar la transacción.</p>
+          <p><strong>4.</strong> Obtener un código QR para facilitar la transacción.</p>
         </div>
       </div>
     </>
