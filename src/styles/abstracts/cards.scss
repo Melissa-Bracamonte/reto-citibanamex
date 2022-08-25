@@ -29,20 +29,33 @@ $fourth-color: #056dae;
    
 }
 
- p1, p2, p3{
+ .font-p-gray{
     color: $secondary-color;
    }
 
-   p1{
+   #size-of{
     font-size: 20px;
    }
 
-p2, p3, p4, p5{
+#p-size-font{
     font-size: 15px;
 }
 
+#p-size-font-ten{
+  font-size: 12px;
+}
+
 #container-viewmore{
-    justify-content: space-between;
+  display: flex;
+  margin: 10px;
+    
+}
+#container-viewmore-start{
+  float: left;
+}
+
+#container-viewmore-end{
+  float: right;
 }
    .container-subtitle{
     background-color: $third-color;
@@ -79,11 +92,7 @@ p2, p3, p4, p5{
     border-left-color: #3DBCEC;
   }
 
-  .cuadrado{
-    background-color: #05588D;
-    width: 10px;
-    height: 100%;
-  }
+ 
   
   .text-card-debito{
     align-self: flex-end;
@@ -95,6 +104,7 @@ p2, p3, p4, p5{
   
   .gray{
     color: gray;
+    font-size: 15px;
   }
 
  

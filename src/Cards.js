@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom'
 function Cards() {
     return (
         <div className='cards'>
-            <p1 >Cuentas en efectivo</p1>
+            <p className='font-p-gray' >Cuentas en efectivo</p>
             <div className='container-cards-debito'>
             <img className="card-img" src={cardDebito} alt="logo"/>
             <div id='text-card-debito'>
-                <p5 className='gray'>Mi cuenta **789</p5><br/>
-                <p5>$9,025.00</p5>
+                <p className='gray' id="p-size-font">Mi cuenta **789</p>
+                <p id="p-size-font">$9,025.00</p>
                 </div>
                 <Link to="/movimientos">
                     <div><FaAngleRight/></div>
@@ -20,12 +20,12 @@ function Cards() {
                 
             </div>
             <br/>
-            <p1 >Tarjetas de crédito</p1>
+            <p className='font-p-gray' >Tarjetas de crédito</p>
             <div className='container-cards-credito'>
             <img className="card-img" src={cardCredito} alt="logo"/>
             <div id='text-card-debito'>
-            <p5 className='gray'>Tarjeta platinum **246</p5><br/>
-                <p5>$9,025.00</p5>
+            <p className='gray'>Tarjeta platinum **246</p>
+                <p id="p-size-font">$9,025.00</p>
             
                 
             </div>

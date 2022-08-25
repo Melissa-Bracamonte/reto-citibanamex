@@ -13,30 +13,30 @@ function Home() {
     <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span className="navbar-toggler-icon"></span>
     </button>
-    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div className="offcanvas offcanvas-end" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div className="offcanvas-header">
-        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">¡Hola Melissa!</h5>
+        <p className="offcanvas-title" id="offcanvasNavbarLabel">¡Hola Melissa!</p>
         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body">
         <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
           <li className="nav-item">
-            <h className="nav-link active" aria-current="page" href="#">Home</h>
+            <p className="nav-link active" aria-current="page" href="#">Home</p>
           </li>
           <li className="nav-item">
-            <h className="nav-link" href="#">Link</h>
+            <p className="nav-link" href="#">Link</p>
           </li>
           <li className="nav-item dropdown">
-            <h className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <p className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Dropdown
-            </h>
+            </p>
             <ul className="dropdown-menu">
-              <li><h className="dropdown-item" href="#">Action</h></li>
-              <li><h className="dropdown-item" href="#">Another action</h></li>
+              <li><p className="dropdown-item" href="#">Action</p></li>
+              <li><p className="dropdown-item" href="#">Another action</p></li>
               <li>
                 <hr className="dropdown-divider"/>
               </li>
-              <li><h className="dropdown-item" href="#">Something else here</h></li>
+              <li><p className="dropdown-item" href="#">Something else here</p></li>
             </ul>
           </li>
         </ul>
@@ -48,19 +48,17 @@ function Home() {
     </div>
   </div>
 </nav>
-<div className='container1'>  
+<div className='container1' >  
 
-<div class="d-flex flex-row" id='container-viewmore'>
-  <div class="p-2"><p1>Ofertas para ti</p1></div>
-  <div class="p-2"><p2>Ver más</p2><button className='button-add-blue'><IoMdAddCircle/></button></div>
-  
-  
-</div>
+<div id='container-viewmore'>
+  <div className="viewmore-start"><p className='font-p-gray' id="p-size-font">Ofertas para ti</p></div>
+  <div className="viewmore-end"><p className='font-p-gray' id="p-size-font-ten">Ver más <button className='button-add-blue'><IoMdAddCircle/></button></p></div>
+  </div>
 
 
 <div className='container-subtitle'>
-  <p3><strong>Una tarjeta pensada para ti 🤩</strong></p3><br/>
-  <p3>Inlcuye recompensas, ¡corre!</p3>
+  <p className='font-p-gray' id="p-size-font"><strong>Una tarjeta pensada para ti 🤩</strong></p>
+  <p className='font-p-gray' id="p-size-font">Inlcuye recompensas, ¡corre!</p>
 </div>
 <br/>
 <Cards/>

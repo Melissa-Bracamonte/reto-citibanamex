@@ -14,10 +14,8 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}>
-          </Route>
-          <Route path="/movimientos" element={<Transactions />}>
-          </Route>
+          <Route path="/" element={<Home />}/>
+          <Route path="/movimientos" element={<Transactions />}/>
           <Route path="/informacion" element={<Information />} />
           <Route path="/compartir" element={<SharingWith />} />
           <Route path="/categoria" element={<Category />} />
