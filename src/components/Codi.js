@@ -2,9 +2,11 @@ import QRCode from "react-qr-code";
 import '../styles/abstracts/codi.scss';
 import logociti from "../../src/img/logociti.png";
 import { Link } from 'react-router-dom';
+import  {useLocation}  from "react-router";
 
 function Codi() {
-
+  const { state } = useLocation();
+const stringCode="http://192.168.1.201:3000/codeqr?monto="+ state.totalDivision+"&&concepto="+encodeURIComponent(state.expenseName);
   return (
     <section className="containerCodi d-flex flex-column">
         
@@ -14,9 +16,10 @@ function Codi() {
             <img className="logocitibanamex" src={logociti} alt="logociti" />
         <p className="subtitle">¡Código listo!</p>
         <p className="">Comparte este código con la persona que te enviará el dinero</p>
-      
-        <QRCode value="400" size={200} bgColor="#282c34" fgColor="#fff" level="H" className="p-2">
+      <div className="containerCode">
+        <QRCode  className="code"value={stringCode}>
         </QRCode>
+        </div>
         </div>
       </div>
       <div className="p-2">
@@ -29,11 +32,11 @@ function Codi() {
     </tr>
     <tr>
       <th scope="row" className="table-left">Monto</th>
-      <td className="table-right">$400</td>
+      <td className="table-right">${state.totalDivision}</td>
     </tr>
     <tr>
       <th scope="row" className="table-left">Concepto</th>
-      <td className="table-right">E comerce Chili's</td>
+      <td className="table-right">{state.expenseName}</td>
     </tr>
     
   </tbody>
