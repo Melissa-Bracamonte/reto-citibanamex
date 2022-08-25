@@ -6,11 +6,7 @@ import { useLocation } from "react-router";
 
 function Codi() {
   const { state } = useLocation();
-  const stringCode =
-    "http://192.168.1.201:3000/codeqr?monto=" +
-    state.totalDivision +
-    "&&concepto=" +
-    encodeURIComponent(state.expenseName);
+const stringCode="https://citibanamex-app.vercel.app//codeqr?monto="+encodeURIComponent(state.totalDivision)+"&&concepto="+encodeURIComponent(state.expenseName);
   return (
     <section className="containerCodi d-flex flex-column">
       <div className="p-2">
