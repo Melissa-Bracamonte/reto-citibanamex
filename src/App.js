@@ -10,6 +10,7 @@ import Codi from "./components/Codi";
 import SpendingHistory from "./components/SpendingHistory";
 import CodeQR from "./components/CodeQR";
 
+
 function App() {
 
   return (

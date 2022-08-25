@@ -28,7 +28,7 @@ const stringCode="http://192.168.1.201:3000/codeqr?monto="+ state.totalDivision+
    <tbody>
     <tr>
       <th scope="row" className="table-left">Cuenta para recibir dinero</th>
-      <td className="table-right">Mark</td>
+      <td className="table-right">Melissa</td>
     </tr>
     <tr>
       <th scope="row" className="table-left">Monto</th>

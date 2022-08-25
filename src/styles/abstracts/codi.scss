@@ -48,3 +48,19 @@
 .table-left{
     position: left;
 }
+.containerQr{
+    background-color: white;
+    align-items: center;
+   
+    position: absolute;
+    z-index: 2;
+    
+    height: 90%;
+    width: 90%;
+    margin: 5%;
+    padding: 0px;
+}
+
+.sendmoney{
+   width: 150px;
+}
