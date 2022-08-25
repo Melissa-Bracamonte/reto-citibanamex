@@ -5,6 +5,8 @@ import Home from './components/Home';
 import Transactions from "./components/Transactions";
 import Information from "./components/Information";
 import SharingWith from "./components/SharingWith";
+import Category from "./components/Category";
+import Codi from "./components/Codi";
 
 function App() {
 
@@ -17,15 +19,15 @@ function App() {
           <Route path="/movimientos" element={<Transactions />}>
           </Route>
           <Route path="/informacion" element={<Information />} />
-
           <Route path="/compartir" element={<SharingWith />} />
-
+          <Route path="/categoria" element={<Category />} />
+          <Route path="/codi" element={<Codi />} />
         </Routes>
       </BrowserRouter>
     </div>
 
   );
-}
+};
 
 export default App;
 

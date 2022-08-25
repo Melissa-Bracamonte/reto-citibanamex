@@ -5,6 +5,7 @@ import { AiOutlineArrowLeft } from "react-icons/ai";
 
 const Transactions = () => {
   const [transaction, setTransaction] = useState([]);
+  // const [id, setId] = useState();
   const navigate = useNavigate();
 
   const getAllTransaction = () => {
@@ -17,8 +18,30 @@ const Transactions = () => {
     getAllTransaction();
   }, []);
 
-  const redirectAccounts = () => {
-    navigate("/compartir");
+  const saveAmountToPay = (amountToPay) => {
+    fetch("https://6305077894b8c58fd72a83cd.mockapi.io/expenses", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(amountToPay),
+    })
+      .then((response) => response.json())
+      .then((addedExpense) => {
+        console.log(addedExpense);
+      });
+  };
+
+  const redirectAccounts = (id, expenseName, date, amountToPay) => {
+    navigate("/compartir", { state: { id: id, expenseName: expenseName, date:date, amountTopay:amountToPay } });
+    // console.log(id);
+    // setId(id);
+    // saveAmountToPay({
+    //   expenseName: expenseName,
+    //   date: date,
+    //   amountToPay: amountToPay,
+    //   id: id
+    // });
   };
 
   const redirectBack = () => {
@@ -49,9 +72,9 @@ const Transactions = () => {
                       <button
                         type="button"
                         className="btnShare"
-                        onClick={redirectAccounts}
+                        onClick={() => {redirectAccounts(item.id, item.expenseName, item.date, item.amountToPay,)}}
                       >
-                        Compartir
+                        Dividir
                       </button>
                     </section>
                   </div>

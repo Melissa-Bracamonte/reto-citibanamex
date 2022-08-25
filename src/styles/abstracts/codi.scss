@@ -1,0 +1,42 @@
+.containerCodi{
+    background-color: white;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 2;
+  
+  height: 90%;
+  margin: 5%;
+  padding: 0px;
+  
+}
+
+.titleCodi {
+    justify-content: flex-start;
+    align-items: center;
+   
+    
+}
+
+
+.logocitibanamex{
+    margin-top: 0px;
+    transform: scale(0.5);
+}
+
+.subtitle{
+    font-size: 20px;
+}
+
+.table{
+    margin: 5px;
+    width: 90%;
+}
+
+.table-right{
+    position: right;
+}
+
+.table-left{
+    position: left;
+}

@@ -2,16 +2,41 @@ body {
   background-color: #056dae;
 }
 
-.containerClients {
+.container-cat {
   margin: 15px auto;
   width: 370px;
   padding: 0px;
 
 }
 
+.list-cat {
+  width: 300px;
+  height: 280px;
+  margin: auto;
+}
+
+.ctn-icon {
+  margin-top: 20px 0;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-template-rows: 85px 85px 85px;
+
+
+}
+
+.icon-cat {
+  justify-self: center;
+  transform: scale(0.8);
+
+}
+
+.txt-icon {
+  color: #ffffff;
+}
+
 .list-clients {
   width: 370px;
-  height: 300px;
+  height: 250px;
   overflow-y: scroll;
 
 }
@@ -29,10 +54,6 @@ body {
 
 .card-inf {
   width: 300px;
-}
-
-.card-data {
-  display: inline-table;
 }
 
 .card-imgDebito {
@@ -53,42 +74,10 @@ body {
   font-size: 12px;
 }
 
-.container-btn {
-  margin-top: 10px;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.btn-newperson {
-  width: 150px;
-  height: 48px;
-  background-color: #B6B6BA;
-  text-align: center;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-}
-
-.icon-dollar {
-  width: 10px;
-}
-
 .txt-btn {
   margin: 0;
   font-size: 15px;
   text-align: center;
-}
-
-.btn-dg {
-  width: 150px;
-  height: 48px;
-  background-color: #00BBEE;
-  text-align: center;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-
 }
 
 ::-webkit-scrollbar {
@@ -123,13 +112,14 @@ body {
   width: 75px;
 }
 
-.container-return {
-  margin-top: 20px;
+.container-add {
+  margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.return {
+.add {
   width: 150px;
   height: 48px;
   background-color: #00BBEE;
