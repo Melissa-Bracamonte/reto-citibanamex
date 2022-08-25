@@ -4,13 +4,13 @@ import { ModalAddAccount } from "./ModalAddAccount";
 import "../styles/abstracts/category.scss";
 import cardDebito from "../img/cardBank.png";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import { BiQuestionMark } from 'react-icons/bi';
-import hogar from '../img/hogar.png'
-import trasnporte from '../img/transporte.png'
-import bienestar from '../img/bienestar.png'
-import salud from '../img/salud.png'
-import educacion from '../img/educacion.png'
-import mascotas from '../img/mascotas.png'
+import { BiQuestionMark } from "react-icons/bi";
+import hogar from "../img/hogar.png";
+import trasnporte from "../img/transporte.png";
+import bienestar from "../img/bienestar.png";
+import salud from "../img/salud.png";
+import educacion from "../img/educacion.png";
+import mascotas from "../img/mascotas.png";
 
 const Category = () => {
   const [clients, setClients] = useState([]);
@@ -70,16 +70,15 @@ const Category = () => {
 
     setTotalDivision(division);
     return division;
-
-  }
-  const viewTransaction=()=>{
+  };
+  const viewTransaction = () => {
     navigate("/movimientos");
-  }
+  };
   const totalCheckList = () => {
     const total = data.cards.length;
-    console.log(total)
+    console.log(total);
     console.log(divisionCuenta(total));
-  }
+  };
 
   const onAdd = () => {
     let popupProduct = {};
@@ -90,8 +89,6 @@ const Category = () => {
     getAllClients();
     setPopup({ visibility: false });
   };
-
-
 
   const redirectHome = () => {
     navigate("/");
@@ -121,7 +118,6 @@ const Category = () => {
             <img className="icon-cat" src={educacion} alt="icon" />
             <img className="icon-cat" src={mascotas} alt="icon" />
           </div>
-
         </section>
 
         <p className="h1 d-flex justify-content-center tittle-sharing">
@@ -141,7 +137,7 @@ const Category = () => {
                       />
                       <div className="card-data">
                         <h5 className="card-title  double">
-                          {item.name} <br /> {" "}
+                          {item.name} <br />{" "}
                           {maskifyCardsContact(item.cardNumber)}{" "}
                         </h5>
                         <h6 className="card-subtitle mb-1 text-muted double-upper">
@@ -166,7 +162,9 @@ const Category = () => {
           })}
         </section>
         <div className="container-add">
-          <button className="add" onClick={viewTransaction}><p className="txt-btn">Agregar</p></button>
+          <button className="add" onClick={viewTransaction}>
+            <p className="txt-btn">Agregar</p>
+          </button>
         </div>
       </section>
     </>
