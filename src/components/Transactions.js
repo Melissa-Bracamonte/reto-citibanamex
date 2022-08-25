@@ -7,7 +7,6 @@ import { BiQuestionMark } from "react-icons/bi";
 
 const Transactions = () => {
   const [transaction, setTransaction] = useState([]);
-  // const [id, setId] = useState();
   const navigate = useNavigate();
 
   const getAllTransaction = () => {
@@ -43,8 +42,6 @@ const Transactions = () => {
         amountTopay: amountToPay,
       },
     });
-    // console.log(id);
-    // setId(id);
     spendingHistory({
       expenseName: expenseName,
       date: date,
@@ -78,15 +75,15 @@ const Transactions = () => {
             return (
               <div key={item.id}>
                 <div className="card">
-                  <div className="card-body d-flex flex-row justify-content-between">
-                    <section className="mr-auto p-2">
+                  <div className="card-body d-flex flex-row justify-content-between card-expenses">
+                    <section className="mr-auto p-0 d-flex flex-column">
                       <h5 className="card-title">{item.expenseName}</h5>
                       <h6 className="card-subtitle mb-2 text-muted">
                         {item.date}
                       </h6>
                     </section>
-                    <section className="p-2 d-flex flex-column">
-                      <p className="card-text">${item.amountToPay}</p>
+                    <section className="p-0 d-flex flex-column">
+                      <p className="card-text amountCard">${item.amountToPay}</p>
                       <button
                         type="button"
                         className="btnShare"
