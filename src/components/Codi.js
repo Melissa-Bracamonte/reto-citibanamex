@@ -6,7 +6,7 @@ import  {useLocation}  from "react-router";
 
 function Codi() {
   const { state } = useLocation();
-const stringCode="https://challengecitibanamex.netlify.app/codi"+ state.totalDivision+"&&concepto="+encodeURIComponent(state.expenseName);
+const stringCode="https://challengecitibanamex.netlify.app/codeqr?"+ state.totalDivision+"&&concepto="+encodeURIComponent(state.expenseName);
   return (
     <section className="containerCodi d-flex flex-column">
         
