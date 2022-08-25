@@ -18,7 +18,7 @@ const SpendingHistory = () => {
   }, []);
 
   const redirectBack = () => {
-    navigate("/");
+    navigate("/movimientos");
   };
 
   return (

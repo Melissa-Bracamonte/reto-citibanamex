@@ -1,5 +1,6 @@
 //variable
 $primary-color: #056dae;
+$secondary-color: #f8f8f8;
 $primary-letter: white;
 
 body{
@@ -35,9 +36,11 @@ h1{
   text-align: center;
 }
 
-.narrow1{
-  width: 45%;
-  margin: 2% 0% 2% 50% ;
+.closeInformation{
+  width: 100px;
+  height: 30px;
+  margin: 2% 0% 2% 79%;
+  color: $secondary-color;
 }
 
 .logociti{

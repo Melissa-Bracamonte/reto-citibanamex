@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/abstracts/transactions.scss";
 import { AiOutlineArrowLeft } from "react-icons/ai";
+import btnSpendingHistory from "../img/btnSpendingHistory.png";
+import { BiQuestionMark } from "react-icons/bi";
 
 const Transactions = () => {
   const [transaction, setTransaction] = useState([]);
@@ -33,14 +35,21 @@ const Transactions = () => {
   };
 
   const redirectAccounts = (id, expenseName, date, amountToPay) => {
-    navigate("/compartir", { state: { id: id, expenseName: expenseName, date:date, amountTopay:amountToPay } });
+    navigate("/compartir", {
+      state: {
+        id: id,
+        expenseName: expenseName,
+        date: date,
+        amountTopay: amountToPay,
+      },
+    });
     // console.log(id);
     // setId(id);
     spendingHistory({
       expenseName: expenseName,
       date: date,
       amountToPay: amountToPay,
-      id: id
+      id: id,
     });
   };
 
@@ -48,12 +57,21 @@ const Transactions = () => {
     navigate("/");
   };
 
+  const redirecHystory = () => {
+    navigate("/historial");
+  };
+
+  const redirectInformation = () => {
+    navigate("/informacion");
+  };
+
   return (
     <>
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
+      <BiQuestionMark className="question" onClick={redirectInformation} />
       <section className="containerTransactions">
         <p className="h2 d-flex justify-content-center title">
-          1.Selecciona tu movimiento
+          1. Selecciona tu movimiento
         </p>
         <section className="allTransactions">
           {transaction.map((item) => {
@@ -72,7 +90,14 @@ const Transactions = () => {
                       <button
                         type="button"
                         className="btnShare"
-                        onClick={() => {redirectAccounts(item.id, item.expenseName, item.date, item.amountToPay,)}}
+                        onClick={() => {
+                          redirectAccounts(
+                            item.id,
+                            item.expenseName,
+                            item.date,
+                            item.amountToPay
+                          );
+                        }}
                       >
                         Dividir
                       </button>
@@ -82,6 +107,12 @@ const Transactions = () => {
               </div>
             );
           })}
+        </section>
+        <section className="spendingContainer">
+          <button className="btnSpendingHistory" onClick={redirecHystory}>
+            <img src={btnSpendingHistory} alt="spendingHistory" />
+          </button>
+          <p className="textBtn">Historial de compartidos</p>
         </section>
       </section>
     </>
