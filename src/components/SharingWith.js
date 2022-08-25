@@ -9,14 +9,13 @@ import { MdQrCode } from "react-icons/md";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BiQuestionMark } from "react-icons/bi";
 import { useLocation } from "react-router";
-import SplitAccount from "./SplitAccount";
-import Codi from "./Codi";
 
 const SharingWith = () => {
   const [clients, setClients] = useState([]);
   const [totalDivision, setTotalDivision] = useState();
   const { state } = useLocation();
-
+  const [total, setTotal] = useState();
+  const [viewTotal, setViewTotal] = useState(false);
   const [data, setData] = useState({
     cards: [],
   });
@@ -62,26 +61,20 @@ const SharingWith = () => {
       });
     }
   };
-<<<<<<< HEAD
-
-  const totalCheckList = () =>{
-    const totalClients = data.cards.length;
-    console.log(totalClients)
-  }
-=======
   const divisionCuenta = (total, totalToSplit) => {
     let division = 0;
     division = totalToSplit / (total + 1);
 
-    setTotalDivision(division);
+    setTotalDivision(division.toFixed(2));
     return division;
   };
 
   const totalCheckList = () => {
     const total = data.cards.length;
+    setTotal(total);
+    setViewTotal(true);
     console.log(divisionCuenta(total, state.amountTopay));
   };
->>>>>>> master
 
   const onAdd = () => {
     let popupProduct = {};
@@ -156,11 +149,6 @@ const SharingWith = () => {
           })}
         </section>
 
-<<<<<<< HEAD
-        <div className='container-btn'>
-          <button className='btn-newperson' onClick={onAdd}><FaDollarSign className="icon-dollar" /> <p className="txt-btn">Nueva Cuenta</p></button>
-          <button className='btn-dg' onClick={totalCheckList}> <BsFillPeopleFill /> <p className="txt-btn">Dividir Gastos</p></button>
-=======
         <div className="container-btn">
           <button className="btn-newperson" onClick={onAdd}>
             <FaDollarSign className="icon-dollar" />{" "}
@@ -173,44 +161,27 @@ const SharingWith = () => {
               Dividir Gastos
             </p>
           </button>
->>>>>>> master
         </div>
 
-        {/* <SplitAccount data={data} /> */}
+{viewTotal === true && (
+
         <div className="card result">
           <div className="card-body d-flex flex-row justify-content-between p-1">
             <section className="mr-auto p-1">
-              <h5 className="card-title">Daniela Miñon</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                25/07
-              </h6>
+              <h5 className="card-title">Total dividido entre {total + 1} personas</h5>
             </section>
             <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">$400.00</p>
-            </section>
-          </div>
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Melissa Bracamonte</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-                25/07
-              </h6>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">$400.00</p>
-            </section>
-          </div>
-          <div className="card-body d-flex flex-row justify-content-between p-1">
-            <section className="mr-auto p-1">
-              <h5 className="card-title">Total</h5>
-              <h6 className="card-subtitle mb-2 text-muted">
-              </h6>
-            </section>
-            <section className="p-1 d-flex flex-column ">
-              <p className="card-text txt-res">$800.00</p>
+              <p className="card-text txt-res">${totalDivision}</p>
             </section>
           </div>
         </div>
+)}
+  
+
+
+
+
+       
         <div className="container-return">
           <button className="return">
             {" "}
