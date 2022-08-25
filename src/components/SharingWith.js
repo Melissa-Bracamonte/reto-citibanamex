@@ -39,12 +39,6 @@ const SharingWith = () => {
 
     const selectInfo= state.amountTopay;
     console.log(selectInfo)
-    
-
-   
-    console.log("total!!!")
-    console.log(state);
-
   };
  
 
