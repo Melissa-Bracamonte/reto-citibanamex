@@ -8,22 +8,28 @@ function Footer() {
     <div className='card-footer d-flex fixed-bottom'>
       <div className="d-flex flex-row" id="space-footer">
         <div className="p-2">
-          <button className='button-footer'><IoMdHelpCircle /><br />Ayuda</button>
+          <button className="button-footer">
+            <IoMdHelpCircle />
+            <br />
+            Ayuda
+          </button>
         </div>
         <div className="p-2">
-          <button className='button-footer'><FaDollarSign /><br />Transacciones</button>
+          <button className="button-footer">
+            <FaDollarSign />
+            <br />
+            Transacciones
+          </button>
         </div>
         <div className="p-2">
-          <button className='button-footer'><BsGraphUp /><br />Invertir</button>
+          <button className="button-footer">
+            <BsGraphUp />
+            <br />
+            Invertir
+          </button>
         </div>
-       
       </div>
-
-
-
-
-
     </div>
-  )
+  );
 }
 export default Footer;

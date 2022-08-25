@@ -1,12 +1,12 @@
 import QRCode from "react-qr-code";
-import '../styles/abstracts/codi.scss';
+import "../styles/abstracts/codi.scss";
 import logociti from "../../src/img/logociti.png";
-import { Link } from 'react-router-dom';
-import  {useLocation}  from "react-router";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router";
 
 function Codi() {
   const { state } = useLocation();
-const stringCode="http://192.168.1.201:3000/codeqr?monto="+ state.totalDivision+"&&concepto="+encodeURIComponent(state.expenseName);
+  const stringCode="https://citibanamex-app.vercel.app//codeqr?monto="+encodeURIComponent(state.totalDivision)+"&&concepto="+encodeURIComponent(state.expenseName);
   return (
     <section className="containerScreenCodi">
         <div className="containerCodi d-flex flex-column ">
@@ -49,10 +49,9 @@ const stringCode="http://192.168.1.201:3000/codeqr?monto="+ state.totalDivision+
                 </Link>
    
                 </div>
+
     </section>
   );
 }
 
 export default Codi;
-
-

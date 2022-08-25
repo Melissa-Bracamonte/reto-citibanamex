@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
-import '../styles/abstracts/SpendingHistory.scss'
+import "../styles/abstracts/SpendingHistory.scss";
 
 const SpendingHistory = () => {
   const [spending, setSpending] = useState([]);
@@ -26,7 +26,9 @@ const SpendingHistory = () => {
       <AiOutlineArrowLeft className="arrowBack" onClick={redirectBack} />
       <section className="containerTransactions">
         <p className="h2 d-flex justify-content-center titleHeader">
-        Historial de gastos<br/>compartidos
+          Historial de gastos
+          <br />
+          compartidos
         </p>
         <section className="allTransactions">
           {spending.map((item) => {
@@ -41,7 +43,9 @@ const SpendingHistory = () => {
                       </h6>
                     </section>
                     <section className="p-0 d-flex flex-column">
-                      <p className="card-text amountCard">${item.amountToPay}</p>
+                      <p className="card-text amountCard">
+                        ${item.amountToPay}
+                      </p>
                     </section>
                   </div>
                 </div>
@@ -49,12 +53,6 @@ const SpendingHistory = () => {
             );
           })}
         </section>
-        {/* <div className="container-return">
-        <button className="return">
-            {" "}
-            <p className="txt-btn">Cerrar</p>
-          </button>
-          </div> */}
       </section>
     </>
   );

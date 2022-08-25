@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 
 export function ModalAddAccount({ attrProduct, onClickCloseModal, visible }) {
- 
   const {
     register,
     handleSubmit,
@@ -84,7 +83,6 @@ export function ModalAddAccount({ attrProduct, onClickCloseModal, visible }) {
                   className="inputModal"
                   id="card"
                   placeholder="Número de tarjeta, cuenta o CLABE"
-                 
                   {...register("card", {
                     required: {
                       value: true,
@@ -96,7 +94,6 @@ export function ModalAddAccount({ attrProduct, onClickCloseModal, visible }) {
                   <p className="errorMessage">{errors.card.message}</p>
                 )}
               </div>
-
               <div>
                 <label className="inputTitle">Banco</label>
                 <input
